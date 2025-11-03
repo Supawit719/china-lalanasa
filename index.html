@@ -1,48 +1,87 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>แกลเลอรี่สถานที่ท่องเที่ยว</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery 30 Photos</title>
+<style>
+/* ========== CSS รวมในไฟล์เดียว ========== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+}
+.container {
+  padding: 20px;
+  text-align: center;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.gallery img {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.caption {
+  font-size: 14px;
+  margin-top: 4px;
+}
+#viewer {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+#viewer img {
+  width: 60%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.back-btn {
+  background: #ff4d6d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+</style>
 </head>
 <body>
-
-<h1>แกลเลอรี่สถานที่ท่องเที่ยว</h1>
-
-<!-- โหมดแกลเลอรี่ -->
-<div id="gallery" class="gallery">
-
-  <!-- รูปตัวอย่าง #1 -->
-  <div class="item" onclick="showDetail(0)">
-    <img src="img/place1.jpg" alt="สถานที่ 1">
-    <p>สถานที่เที่ยว 1</p>
+<div class="container">
+  <div id="gallery" class="gallery">
+    <!-- ใส่รูป 30 รูปตัวอย่าง -->
+    <script>
+    let html="";
+    for(let i=1;i<=30;i++){
+      html += `<div onclick=show(${i})><img src='images/${i}.jpg'><div class='caption'>สถานที่ ${i}</div></div>`;
+    }
+    document.write(html);
+    </script>
   </div>
 
-  <!-- รูปตัวอย่าง #2 -->
-  <div class="item" onclick="showDetail(1)">
-    <img src="img/place2.jpg" alt="สถานที่ 2">
-    <p>สถานที่เที่ยว 2</p>
+  <div id="viewer">
+    <button class="back-btn" onclick="back()">ย้อนกลับ</button>
+    <img id="bigImg" src="">
+    <p id="detail"></p>
   </div>
-
-  <!-- รูปตัวอย่าง #3 -->
-  <div class="item" onclick="showDetail(2)">
-    <img src="img/place3.jpg" alt="สถานที่ 3">
-    <p>สถานที่เที่ยว 3</p>
-  </div>
-
-  <!-- ✅ คัดลอกบล็อคนี้เพื่อเพิ่มให้ครบ 30 รูป -->
-
 </div>
 
-<!-- โหมดแสดงรายละเอียด -->
-<div id="detail" class="detail hidden">
-  <img id="bigImg" src="" alt="">
-  <h2 id="placeName"></h2>
-  <p id="placeDesc"></p>
+<script>
+function show(i){
+  document.getElementById('gallery').style.display='none';
+  document.getElementById('viewer').style.display='block';
+  document.getElementById('bigImg').src=`images/${i}.jpg`;
+  document.getElementById('detail').innerText=`รายละเอียดสถานที่ที่ ${i}`;
+}
+function back(){
+  document.getElementById('viewer').style.display='none';
+  document.getElementById('gallery').style.display='grid';
+}
+</script>
 
-  <button onclick="goBack()" class="btn-back">ย้อนกลับ</button>
-</div>
-
-<script src="app.js"></script>
 </body>
 </html>
