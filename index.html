@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>แกลเลอรี่สถานที่ท่องเที่ยว</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>แกลเลอรี่สถานที่ท่องเที่ยว</h1>
+
+<!-- โหมดแกลเลอรี่ -->
+<div id="gallery" class="gallery">
+
+  <!-- รูปตัวอย่าง #1 -->
+  <div class="item" onclick="showDetail(0)">
+    <img src="img/place1.jpg" alt="สถานที่ 1">
+    <p>สถานที่เที่ยว 1</p>
+  </div>
+
+  <!-- รูปตัวอย่าง #2 -->
+  <div class="item" onclick="showDetail(1)">
+    <img src="img/place2.jpg" alt="สถานที่ 2">
+    <p>สถานที่เที่ยว 2</p>
+  </div>
+
+  <!-- รูปตัวอย่าง #3 -->
+  <div class="item" onclick="showDetail(2)">
+    <img src="img/place3.jpg" alt="สถานที่ 3">
+    <p>สถานที่เที่ยว 3</p>
+  </div>
+
+  <!-- ✅ คัดลอกบล็อคนี้เพื่อเพิ่มให้ครบ 30 รูป -->
+
+</div>
+
+<!-- โหมดแสดงรายละเอียด -->
+<div id="detail" class="detail hidden">
+  <img id="bigImg" src="" alt="">
+  <h2 id="placeName"></h2>
+  <p id="placeDesc"></p>
+
+  <button onclick="goBack()" class="btn-back">ย้อนกลับ</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
