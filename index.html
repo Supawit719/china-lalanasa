@@ -16,14 +16,19 @@ body {
   text-align: center;
 }
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  align-items: center;
 }
 .gallery img {
-  width: 100%;
+  width: 300px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
 }
 .caption {
   font-size: 14px;
@@ -81,7 +86,19 @@ function back(){
   document.getElementById('viewer').style.display='none';
   document.getElementById('gallery').style.display='grid';
 }
+// reveal on scroll
+const imgs = document.querySelectorAll('.gallery img');
+function reveal(){
+  imgs.forEach(img=>{
+    const rect = img.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 50){
+      img.style.opacity = 1;
+      img.style.transform = 'translateY(0)';
+    }
+  });
+}
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
 </script>
-
 </body>
 </html>
