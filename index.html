@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>welcom to china</title></title>
+<title>Gallery 30 Places</title>
 <style>
 body {
   margin: 0;
@@ -67,35 +67,17 @@ body {
 <body>
 <!-- ✅ หน้าแรก -->
 <div class="hero" id="home">
-  <h1>Welcome to china</h1>
-  <button onclick="enterGallery()">สถานที่ท่องเที่ยว</button>
+  <h1>Welcome ✨</h1>
+  <button onclick="enterGallery()">เข้าสู่หน้าแกลลอรี่</button>
 </div>
 <!-- ✅ หน้าแกลลอรี่ -->
 <div id="galleryPage">
   <h2 style="text-align:center; text-shadow:0 0 8px #b07bff;">สถานที่ท่องเที่ยว</h2><br>
   <div class="photo-list">
     <!-- ✅ คัดลอกวางเพิ่มได้เลย -->
-    <div onclick="show(1)"><img src="image/china3.png"><div class='caption'>สถานที่ 1</div></div>
-    <div onclick="show(2)"><img src="image/china4.png"><div class='caption'>สถานที่ 2</div></div>
-    <div onclick="show(3)"><img src="image/china5.png"><div class='caption'>สถานที่ 3</div></div>
-    <div onclick="show(3)"><img src="image/china6.png"><div class='caption'>สถานที่ 4</div></div>
-    <div onclick="show(3)"><img src="image/images2.jpg"><div class='caption'>สถานที่ 5</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 6</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 7</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 8</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 9</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 10</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 11</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 12</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 13</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 14</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 15</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 16</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 17</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 18</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 19</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 20</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 21</div></div>
+    <div onclick="show(1)"><img src="images/1.jpg"><div class='caption'>สถานที่ 1</div></div>
+    <div onclick="show(2)"><img src="images/2.jpg"><div class='caption'>สถานที่ 2</div></div>
+    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
     <!-- 📌 คัดลอกรูปแบบนี้ถึงรูปที่ 30 -->
     <!-- <div onclick="show(4)"><img src="images/4.jpg"><div class='caption'>สถานที่ 4</div></div> -->
   </div>
@@ -112,7 +94,8 @@ function show(i){document.getElementById('galleryPage').style.display='none';doc
 function back(){document.getElementById('viewer').style.display='none';document.getElementById('galleryPage').style.display='block';}
 /* ✅ Scroll reveal */
 function reveal(){document.querySelectorAll('.photo-list img').forEach(img=>{const rect=img.getBoundingClientRect();if(rect.top<window.innerHeight-50){img.style.opacity=1;img.style.transform='translateY(0)';}});}
-window.addEventListener('scroll', reveal);// Data for 21 images and descriptions
+window.addEventListener('scroll', reveal);
+// Data for 21 images and descriptions
 const places=[
 {img:"img1.jpg",text:"สถานที่ตัวอย่างที่ 1 - บรรยากาศสวยงามและเงียบสงบ"},
 {img:"img2.jpg",text:"สถานที่ตัวอย่างที่ 2 - จุดชมวิวธรรมชาติ"},
@@ -136,10 +119,7 @@ const places=[
 {img:"img20.jpg",text:"สถานที่ตัวอย่างที่ 20 - ทุ่งดอกไม้สีสันสดใส"},
 {img:"img21.jpg",text:"สถานที่ตัวอย่างที่ 21 - เมืองท่องเที่ยวแสงสียามค่ำคืน"}
 ];
-  
+
 </script>
 </body>
 </html>
-
-
-
