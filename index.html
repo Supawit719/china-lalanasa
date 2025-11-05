@@ -112,9 +112,34 @@ function show(i){document.getElementById('galleryPage').style.display='none';doc
 function back(){document.getElementById('viewer').style.display='none';document.getElementById('galleryPage').style.display='block';}
 /* ✅ Scroll reveal */
 function reveal(){document.querySelectorAll('.photo-list img').forEach(img=>{const rect=img.getBoundingClientRect();if(rect.top<window.innerHeight-50){img.style.opacity=1;img.style.transform='translateY(0)';}});}
-window.addEventListener('scroll', reveal);
+window.addEventListener('scroll', reveal);// Data for 21 images and descriptions
+const places=[
+{img:"img1.jpg",text:"สถานที่ตัวอย่างที่ 1 - บรรยากาศสวยงามและเงียบสงบ"},
+{img:"img2.jpg",text:"สถานที่ตัวอย่างที่ 2 - จุดชมวิวธรรมชาติ"},
+{img:"img3.jpg",text:"สถานที่ตัวอย่างที่ 3 - น้ำตกใสกลางหุบเขา"},
+{img:"img4.jpg",text:"สถานที่ตัวอย่างที่ 4 - วัดโบราณเก่าแก่"},
+{img:"img5.jpg",text:"สถานที่ตัวอย่างที่ 5 - ภูเขาและทะเลหมอก"},
+{img:"img6.jpg",text:"สถานที่ตัวอย่างที่ 6 - หมู่บ้านกลางหุบเขา"},
+{img:"img7.jpg",text:"สถานที่ตัวอย่างที่ 7 - จุดถ่ายรูปยอดนิยม"},
+{img:"img8.jpg",text:"สถานที่ตัวอย่างที่ 8 - ริมทะเลสวยงาม"},
+{img:"img9.jpg",text:"สถานที่ตัวอย่างที่ 9 - สวนดอกไม้ขนาดใหญ่"},
+{img:"img10.jpg",text:"สถานที่ตัวอย่างที่ 10 - เมืองโบราณ"},
+{img:"img11.jpg",text:"สถานที่ตัวอย่างที่ 11 - ถนนคนเดิน"},
+{img:"img12.jpg",text:"สถานที่ตัวอย่างที่ 12 - ทะเลสาบใสเงียบสงบ"},
+{img:"img13.jpg",text:"สถานที่ตัวอย่างที่ 13 - ป่าไม้และธรรมชาติอุดมสมบูรณ์"},
+{img:"img14.jpg",text:"สถานที่ตัวอย่างที่ 14 - จุดแคมป์ปิ้งยอดนิยม"},
+{img:"img15.jpg",text:"สถานที่ตัวอย่างที่ 15 - วัดสวยกลางหุบเขา"},
+{img:"img16.jpg",text:"สถานที่ตัวอย่างที่ 16 - สะพานชมวิวริมทะเล"},
+{img:"img17.jpg",text:"สถานที่ตัวอย่างที่ 17 - เกาะสวรรค์น้ำใส"},
+{img:"img18.jpg",text:"สถานที่ตัวอย่างที่ 18 - ภูทับเบิกทะเลหมอก"},
+{img:"img19.jpg",text:"สถานที่ตัวอย่างที่ 19 - จุดชมพระอาทิตย์ลับฟ้า"},
+{img:"img20.jpg",text:"สถานที่ตัวอย่างที่ 20 - ทุ่งดอกไม้สีสันสดใส"},
+{img:"img21.jpg",text:"สถานที่ตัวอย่างที่ 21 - เมืองท่องเที่ยวแสงสียามค่ำคืน"}
+];
+  
 </script>
 </body>
 </html>
+
 
 
