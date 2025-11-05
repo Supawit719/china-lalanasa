@@ -1,147 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery 30 Photos</title>
+<title>Gallery 30 Places</title>
 <style>
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  font-family: Arial, sans-serif;
+  background: #0a0014;
+  color: white;
+  overflow-x: hidden;
 }
- }
-
-        /* สไตล์พื้นฐานสำหรับไอคอน */
-        .music-icon,
-        .volume-icon {
-            width: 60px;
-            height: 60px;
-            background-color: #ffb6c1;
-            /* สีชมพูอ่อน */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin: 10px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(255, 105, 180, 0.3);
-            transition: box-shadow 0.3s ease;
-            cursor: pointer;
-            animation: moveSideToSide 2s ease-in-out infinite alternate;
-        
-  .container {
-  padding: 20px;
-  text-align: center;
-}
-.gallery {
+/* ✅ หน้าแรก */
+.hero {
+  height: 100vh;
+  background: url('images/cover.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px;
+  justify-content: center;
   align-items: center;
+  text-shadow: 0 0 12px #b07bff;
 }
-.gallery img {
-  width: 300px;
+.hero h1 {font-size: 50px; margin: 0; animation: glow 2s infinite;} 
+@keyframes glow {0%{opacity:.7;}50%{opacity:1;}100%{opacity:.7;}}
+.hero button {
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: #b07bff;
+  border: none;
+  border-radius: 8px;
+  font-size: 20px;
   cursor: pointer;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.7s ease;
+  transition:.3s;
 }
-.caption {
-  font-size: 14px;
-  margin-top: 4px;
-}
-#viewer {
-  display: none;
-  text-align: center;
+.hero button:hover {transform: scale(1.1); box-shadow:0 0 20px #cc8bff;}
+/* ✅ หน้าแกลลอรี่ */
+#galleryPage {display: none; padding: 20px;}
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
   padding: 20px;
 }
-#viewer img {
-  width: 60%;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.photo-list img {
+  width: 100%; border-radius: 10px; cursor: pointer;
+  opacity: 0; transform: translateY(30px);
+  transition: all .6s ease;
 }
+.photo-list div {position: relative; text-align: center;}
+/* ✅ Hover เอฟเฟกต์ม่วง + ขยาย */
+.photo-list img:hover {
+  transform: scale(1.08) translateY(0);
+  box-shadow: 0 0 20px #b07bff;
+  filter: brightness(1.3);
+}
+.caption {margin-top: 6px; font-size: 16px; color: #e4c1ff;}
+/* ✅ ดูรูปใหญ่ */
+#viewer {display:none; text-align:center; padding:20px;}
+#viewer img {width:60%; border-radius:10px; margin-bottom:10px;}
 .back-btn {
-  background: #ff4d6d;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-bottom: 15px;
+  background:#b07bff; padding:10px 25px; border:0; border-radius:6px; cursor:pointer;
 }
 </style>
 </head>
 <body>
-<div class="container">
-  <div id="gallery" class="gallery">
-<div class="photo-list">
-  <div onclick="show(1)"><img src="image/china3.png"><div class='caption'>image</div></div>
-  <div onclick="show(2)"><img src="image/images2.jpg"><div class='caption'>สถานที่ 2</div></div>
-  <div onclick="show(3)"><img src="image/china6.png"><div class='caption'>สถานที่ 3</div></div>
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-  <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-
-    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
-
+<!-- ✅ หน้าแรก -->
+<div class="hero" id="home">
+  <h1>Welcome ✨</h1>
+  <button onclick="enterGallery()">เข้าสู่หน้าแกลลอรี่</button>
 </div>
-<script>(html);
-    </script>
-  </div>
-
-  <div id="viewer">
-    <button class="back-btn" onclick="back()">ย้อนกลับ</button>
-    <img id="bigImg" src="">
-    <p id="detail"></p>
+<!-- ✅ หน้าแกลลอรี่ -->
+<div id="galleryPage">
+  <h2 style="text-align:center; text-shadow:0 0 8px #b07bff;">สถานที่ท่องเที่ยว</h2><br>
+  <div class="photo-list">
+    <!-- ✅ คัดลอกวางเพิ่มได้เลย -->
+    <div onclick="show(1)"><img src="images/1.jpg"><div class='caption'>สถานที่ 1</div></div>
+    <div onclick="show(2)"><img src="images/2.jpg"><div class='caption'>สถานที่ 2</div></div>
+    <div onclick="show(3)"><img src="images/3.jpg"><div class='caption'>สถานที่ 3</div></div>
+    <!-- 📌 คัดลอกรูปแบบนี้ถึงรูปที่ 30 -->
+    <!-- <div onclick="show(4)"><img src="images/4.jpg"><div class='caption'>สถานที่ 4</div></div> -->
   </div>
 </div>
-
+<!-- ✅ Viewer -->
+<div id="viewer">
+  <button class="back-btn" onclick="back()">ย้อนกลับ</button>
+  <img id="bigImg" src="">
+  <p id="detail"></p>
+</div>
 <script>
-function show(i){
-  document.getElementById('gallery').style.display='none';
-  document.getElementById('viewer').style.display='block';
-  document.getElementById('bigImg').src=`images/${i}.jpg`;
-  document.getElementById('detail').innerText=`รายละเอียดสถานที่ที่ ${i}`;
-}
-function back(){
-  document.getElementById('viewer').style.display='none';
-  document.getElementById('gallery').style.display='grid';
-}
-// reveal on scroll
-const imgs = document.querySelectorAll('.gallery img');
-function reveal(){
-  imgs.forEach(img=>{
-    const rect = img.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 50){
-      img.style.opacity = 1;
-      img.style.transform = 'translateY(0)';
-    }
-  });
-}
+function enterGallery(){document.getElementById('home').style.display='none';document.getElementById('galleryPage').style.display='block'; reveal();}
+function show(i){document.getElementById('galleryPage').style.display='none';document.getElementById('viewer').style.display='block';document.getElementById('bigImg').src=`images/${i}.jpg`;document.getElementById('detail').innerText=`รายละเอียดสถานที่ที่ ${i}`;}
+function back(){document.getElementById('viewer').style.display='none';document.getElementById('galleryPage').style.display='block';}
+/* ✅ Scroll reveal */
+function reveal(){document.querySelectorAll('.photo-list img').forEach(img=>{const rect=img.getBoundingClientRect();if(rect.top<window.innerHeight-50){img.style.opacity=1;img.style.transform='translateY(0)';}});}
 window.addEventListener('scroll', reveal);
-window.addEventListener('load', reveal);
 </script>
 </body>
 </html>
-
-
-
-
-
-
