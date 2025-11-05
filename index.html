@@ -1,149 +1,174 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>แกลเลอรี่ 21 สถานที่เที่ยวจีน</title>
-
+<meta charset="UTF-8">
+<title>สถานที่ท่องเที่ยวจีน</title>
 <style>
-:root{
-  --accent:#b07bff;
-  --bg:#0a0018;
-  --card-bg: rgba(255,255,255,0.05);
-}
-*{box-sizing:border-box;}
-body{
-  margin:0; font-family:"Noto Sans Thai",Arial,sans-serif;
-  background:var(--bg); color:#fff;
+body {
+  font-family: sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
 
-/*** HERO ***/
-.hero{
-  height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-  background:linear-gradient(180deg,rgba(16,8,28,.6),rgba(8,2,20,.9)),url("images/cover.jpg") center/cover no-repeat;
-  text-align:center; padding:30px;
-}
-.hero h1{font-size:clamp(26px,4vw,55px); margin:0 0 10px;}
-.hero p{max-width:800px; opacity:.9;}
-.hero button{
-  margin-top:20px; padding:14px 30px; font-size:18px; border:0; cursor:pointer; border-radius:10px;
-  background:var(--accent); color:#fff; transition:.25s;
-  box-shadow:0 10px 30px rgba(176,123,255,.25);
-}
-.hero button:hover{transform:scale(1.06); box-shadow:0 18px 45px rgba(176,123,255,.45);}
-
-/*** GALLERY PAGE ***/
-.container{max-width:1200px; margin:auto; padding:20px;}
-.title{text-align:center; margin:15px 0 25px; color:var(--accent); font-size:28px;}
-
-.photo-list{
-  display:grid; grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
 }
 
-.item{
-  background:var(--card-bg); padding:10px; border-radius:14px;
-  box-shadow:0 6px 20px rgba(0,0,0,.45);
-}
-.item .wrap{position:relative; overflow:hidden; border-radius:10px;}
-
-.item img{
-  width:100%; height:230px; object-fit:cover; border-radius:10px;
-  opacity:0; transform:translateY(25px) scale(1); transition:transform .45s,filter .3s,opacity .6s;
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
-.item:hover img{
-  transform:scale(1.08);
-  filter:brightness(1.15) saturate(1.2);
-  box-shadow:0 0 25px rgba(176,123,255,.6);
+/* เอฟเฟกต์เมื่อเอาเมาส์ชี้ */
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
 }
 
-.caption{
-  margin-top:8px; text-align:center; font-weight:600; font-size:15.5px; color:#e6d7ff;
+/* กล่องข้อความ popup */
+.popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+  display: none;
+  z-index: 1000;
 }
 
-/*** VIEWER ***/
-#viewer{display:none; padding:25px; text-align:center;}
-#viewer img{
-  width:90%; max-width:900px; border-radius:12px;
-  box-shadow:0 25px 60px rgba(0,0,0,.6);
-}
-.place-text{
-  margin:15px auto 0; max-width:900px; text-align:left;
-  padding:18px; border-radius:12px; line-height:1.75;
-  background:rgba(176,123,255,.13);
-}
-.back-btn{
-  margin-bottom:15px; padding:10px 18px; border-radius:8px;
-  border:0; background:var(--accent); color:#fff; cursor:pointer;
+.popup h2 { margin-top: 0; }
+
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
 }
 
-/*** RESPONSIVE ***/
-@media(max-width:900px){ .photo-list{grid-template-columns:repeat(2,1fr);} }
-@media(max-width:600px){ .photo-list{grid-template-columns:1fr;} .hero{padding:40px 18px;} }
+.closeBtn {
+  cursor: pointer;
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+}
 </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <h1>แกลเลอรี่สถานที่เที่ยวจีน 21 แห่ง</h1>
-  <p>เลือกชมสถานที่ท่องเที่ยวสุดอลังการ พร้อมเอฟเฟคเคลื่อนไหวและเนื้อหาอย่างละเอียด</p>
-  <button onclick="enterGallery()">เข้าสู่เว็บไซต์</button>
-</section>
+<h1>21 สถานที่ท่องเที่ยวจีน</h1>
 
-<!-- GALLERY -->
-<section class="container" id="galleryPage" style="display:none;">
-  <h2 class="title">สถานที่ท่องเที่ยวแนะนำ</h2>
+<div class="gallery">
+  <img src="img1.jpg" onclick="showInfo(0)">
+  <img src="img2.jpg" onclick="showInfo(1)">
+  <img src="img3.jpg" onclick="showInfo(2)">
+  <img src="img4.jpg" onclick="showInfo(3)">
+  <img src="img5.jpg" onclick="showInfo(4)">
+  <img src="img6.jpg" onclick="showInfo(5)">
+  <img src="img7.jpg" onclick="showInfo(6)">
+  <img src="img8.jpg" onclick="showInfo(7)">
+  <img src="img9.jpg" onclick="showInfo(8)">
+  <img src="img10.jpg" onclick="showInfo(9)">
+  <img src="img11.jpg" onclick="showInfo(10)">
+  <img src="img12.jpg" onclick="showInfo(11)">
+  <img src="img13.jpg" onclick="showInfo(12)">
+  <img src="img14.jpg" onclick="showInfo(13)">
+  <img src="img15.jpg" onclick="showInfo(14)">
+  <img src="img16.jpg" onclick="showInfo(15)">
+  <img src="img17.jpg" onclick="showInfo(16)">
+  <img src="img18.jpg" onclick="showInfo(17)">
+  <img src="img19.jpg" onclick="showInfo(18)">
+  <img src="img20.jpg" onclick="showInfo(19)">
+  <img src="img21.jpg" onclick="showInfo(20)">
+</div>
 
-  <div class="photo-list">
-    <!-- 21 รูป -->
-    <script>
-      const names=[
-"ปักกิ่ง (Beijing)","กำแพงเมืองจีน (Great Wall of China)","เซียงไฮ้ (Shanghai)",
-"หาดไว่ทาน (The Bund)","พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)","หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)",
-"ฮาร์บิน (Harbin)","สุสานจิ๋นซีฮ่องเต้","อุทยานแห่งชาติจางเจียเจี้ย",
-"พระราชวังโปตาลา (Potala Palace)","ศูนย์อนุรักษ์แพนด้าเฉิงตู","ทะเลสาบพระจันทร์เสี้ยว",
-"ต๋ากู่ปิงชวน","ตันเสียจางเย่","กุ้ยหลิน","ย่าติง","เฟิ่งหวง","ช่องแคบแยงซีเกียง",
-"ทะเลสาบชิงไห่","ทะเลสาบซีหู","อุทยานป่าหิน"
-];
-      let html="";
-      for(let i=1;i<=21;i++){
-        html+=`<div class="item"><div class="wrap"><img data-index="${i}" src="images/${i}.jpg"></div><div class="caption">${names[i-1]}</div></div>`;
-      }
-      document.write(html);
-    </script>
-  </div>
-</section>
+<div class="overlay" onclick="closeInfo()"></div>
 
-<!-- VIEWER -->
-<section id="viewer">
-  <button class="back-btn" onclick="backToGallery()">ย้อนกลับ</button>
-  <img id="viewerImg">
-  <div id="viewerText" class="place-text"></div>
-</section>
+<div class="popup" id="popup">
+  <h2 id="title"></h2>
+  <p id="content"></p>
+  <button class="closeBtn" onclick="closeInfo()">ปิด</button>
+</div>
+
 
 <script>
-const places=[
-`ปักกิ่ง (Beijing)
-ปักกิ่ง เมืองหลวง... (ข้อความยาวตามที่ให้มา)`,
-`กำแพงเมืองจีน (Great Wall of China)
-ไม่ว่าใครต่างก็เคยได้ยิน...`,
-`เซียงไฮ้ (Shanghai)
-เซียงไฮ้ หนึ่งในเมืองเศรษฐกิจ...`,
-`หาดไว่ทาน (The Bund)
-แลนด์มาร์คริมแม่น้ำ...`,
-`พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)
-แหล่งรวมศิลปะโบราณ...`,
-`จิ่วจ้ายโกว ธรรมชาติสวยเหมือนสวรรค์...`,
-`ฮาร์บิน เมืองน้ำแข็งแห่งจีน...`,
-`สุสานจิ๋นซีฮ่องเต้ โบราณสถานระดับโลก`,
-`จางเจียเจี้ย ภูเขาหินเสา Avatar`,
-`พระราชวังโปตาลา แห่งทิเบต`,
-`ดูแพนด้าอย่างใกล้ชิด`,
-`ทะเลทราย+โอเอซิส`,
-`ธารน้ำแข็งต๋ากู่`,
-`ภูเขาหินสีรุ้ง Danxia`,
-`ภูเขาหินปูน+ทะเลสาบ กุ้ยหลิน`,
-`ย่าติง ธรร
+const places = [
+{title:"ปักกิ่ง (Beijing)", text:`ปักกิ่ง เมืองหลวงแห่งประเทศจีนที่ทุกคนควรลองมาเที่ยวดูสักครั้ง... 
+
+• กำแพงเมืองจีน  
+• จัตุรัสเทียนอันเหมิน  
+• พระราชวังต้องห้าม  
+• พิพิธภัณฑ์ศิลปะอิฐแดง`},
+
+{title:"กำแพงเมืองจีน (Great Wall of China)", text:`1 ใน 7 สิ่งมหัศจรรย์ของโลก ความยาวกว่า 21,196 กม. วิวสวยสุดยอด`},
+
+{title:"เซียงไฮ้ (Shanghai)", text:`นครปารีสแห่งตะวันออก เมืองเศรษฐกิจ หรูทันสมัย มีตึกและซอยโบราณ`},
+
+{title:"หาดไว่ทาน (The Bund)", text:`ถนนริมแม่น้ำ บรรยากาศยุโรป จุดถ่ายรูปสุดฮิต`},
+
+{title:"พิพิธภัณฑ์เซี่ยงไฮ้", text:`รวบรวมงานศิลปะโบราณจีน เช่น หยก งานผ้า ตัวอักษรจีน`},
+
+{title:"หุบเขาจิ่วจ้ายโกว", text:`หุบเขาและทะเลสาบสีฟ้า ใบไม้เปลี่ยนสีสวยเหมือนสวรรค์บนดิน`},
+
+{title:"ฮาร์บิน (Harbin)", text:`เมืองหิมะ มีเทศกาลน้ำแข็ง และหมู่บ้านสไตล์รัสเซีย`},
+
+{title:"สุสานจิ๋นซีฮ่องเต้", text:`สุสานโบราณพร้อมทหารดินเผานับพันตัว`},
+
+{title:"อุทยานจางเจียเจี้ย", text:`ภูเขาหินตั้งตระหง่าน เหมือนในหนัง Avatar`},
+
+{title:"พระราชวังโปตาลา", text:`ศิลปกรรมทิเบต ศูนย์กลางศาสนาและวัฒนธรรมทิเบต`},
+
+{title:"ศูนย์อนุรักษ์หมีแพนด้า", text:`ชมแพนด้าใกล้ชิด แหล่งเพาะพันธุ์ใหญ่ที่สุดในจีน`},
+
+{title:"ทะเลสาบพระจันทร์เสี้ยว", text:`โอเอซิสกลางทะเลทรายโกบี มีบริการขี่อูฐ`},
+
+{title:"ต๋ากู่ปิงชวน", text:`ยอดเขาหิมะแสนงาม เหมือนยืนอยู่บนสวรรค์`},
+
+{title:"หุบเขาหินสีรุ้ง (Danxia)", text:`ภูเขาหลากสีสันเหมือนสายรุ้ง มีบอลลูนชมวิว`},
+
+{title:"กุ้ยหลิน", text:`ภูเขาสวย ถ้ำงอกง้อย รูปงวงช้างสุดโดดเด่น`},
+
+{title:"อุทยานย่าติง", text:`วิวภูเขาหิมะ + ทะเลสาบ มุมพักผ่อนสุดอลัง`},
+
+{title:"เมืองโบราณเฟิ่งหวง", text:`เวนิสเมืองจีน บ้านไม้ริมแม่น้ำ ล่องเรือชมเมือง`},
+
+{title:"ช่องแคบซานเสีย", text:`ล่องเรือชมภูเขาเขียวริมแม่น้ำแยงซีเกียง`},
+
+{title:"ทะเลสาบชิงไห่", text:`ทะเลสาบน้ำเค็มใหญ่สุดของจีน มีกิจกรรมมากมาย`},
+
+{title:"ทะเลสาบซีหู", text:`ทะเลสาบสวยสงบ ล้อมด้วยดอกไม้และภูเขา`},
+
+{title:"อุทยานป่าหิน (Shilin)", text:`ป่าหินปูนอายุ 270 ล้านปี แลนด์มาร์กระดับโลก`}
+];
+
+function showInfo(i){
+  document.getElementById("title").innerText = places[i].title;
+  document.getElementById("content").innerText = places[i].text;
+  document.querySelector(".popup").style.display="block";
+  document.querySelector(".overlay").style.display="block";
+}
+
+function closeInfo(){
+  document.querySelector(".popup").style.display="none";
+  document.querySelector(".overlay").style.display="none";
+}
+</script>
+
+</body>
+</html>
