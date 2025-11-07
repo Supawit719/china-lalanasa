@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F1 Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(270deg, #b71c1c, #f44336, #880e4f);
+      background-size: 600% 600%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .login-form {
+      background: rgba(136,14,79,0.9);
+      padding: 50px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 320px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .login-form h2 {
+      color: #fff;
+      text-align: center;
+    }
+
+    .login-form input {
+      padding: 15px;
+      border-radius: 5px;
+      border: 2px solid #ff1744;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .login-form input::placeholder {
+      color: #fff;
+    }
+
+    .login-form input:focus {
+      border-color: #ff5252;
+      box-shadow: 0 0 10px rgba(255,82,82,0.5);
+    }
+
+    button {
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #ff1744;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff5252;
+    }
+
+    .error {
+      color: #ffcdd2;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <form class="login-form" onsubmit="return login(event)">
+    <h2>F1 Login</h2>
+    <input type="text" id="username" placeholder="username" required>
+    <input type="password" id="password" placeholder="password" required>
+    <button type="submit">Login</button>
+    <p class="error" id="errorMsg"></p>
+  </form>
+
+  <script>
+    function login(event) {
+      event.preventDefault(); // ป้องกันรีเฟรชหน้า
+
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const error = document.getElementById("errorMsg");
+
+      // ตัวอย่างบัญชีจำลอง
+      if (user === "admin" && pass === "1234") {
+        window.location.href = "index.html"; // ไปหน้าหลัก
+      } else {
+        error.textContent = "❌ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+      }
+    }
+  </script>
+<script>
+  function login(event) {
+    event.preventDefault();
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+    const error = document.getElementById("errorMsg");
+
+    if (user === "admin" && pass === "1234") {
+      sessionStorage.setItem("loggedIn", "true");
+      window.location.href = "F1.html"; // ✅ ไปหน้าเว็บหลัก
+    } else {
+      error.textContent = "❌ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+    }
+  }
+</script>
+
+</body>
+</html>
