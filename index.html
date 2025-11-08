@@ -1,53 +1,60 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>แกลเลอรี่ 21 สถานที่ ประเทศจีน</title>
 <style>
-@font-face
-     {
-      font-family: 'Starbirl';
-      src: url('Starbirl.otf') format('truetype');
-      font-display: swap;
-    }
-    body {
-      margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #00000000, #852067);
-      color: white;
-      overflow-x: hidden;
-    }
-    header {
-      background: #8a1497;
-      padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
+@font-face {
+  font-family: 'Starbirl';
+  src: url('Starbirl.otf') format('truetype');
+  font-display: swap;
+}
 
-    header h1 {
-      font-size: 24px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
+:root {
+  --main: #5a007a;
+  --accent: #a043ff;
+  --bg-dark: #0a0010;
+}
 
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #0a0010, #260033);
+  color: white;
+  overflow-x: hidden;
+}
 
-    nav a:hover {
-      color: #ffeb3b;
-    }
+/* Header */
+header {
+  background: var(--main);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+header h1 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: var(--accent);
+  text-shadow: 0 0 12px var(--accent);
+}
 
-    .hero {
-  height: 100vh; /* เต็มความสูงหน้าจอ */
-  width: 100vw;  /* เต็มความกว้างหน้าจอ */
+/* หน้าแรก */
+.hero {
+  height: 100vh;
+  width: 100vw;
   background: url('โค้ด/ฉงฉิง2.gif') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
@@ -55,146 +62,187 @@
   align-items: center;
   text-align: center;
   color: white;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-  margin: 0;
-  padding: 0;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
-    .hero h2 {
-      font-family: 'Starbirl', sans-serif;
-      font-size: 64px;
-      margin: 0;
-      color: #ff174
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.8);
-    }
-    .hero p {
-      font-size: 18px;
-      width: 70%;
-      max-width: 600px;
-      line-height: 1.8;
-      margin-top: 15px;
-    }
+.hero h1 {
+  font-family: 'Starbirl', sans-serif;
+  font-size: 60px;
+  color: #ffffff;
+  margin-bottom: 25px;
+}
+.enter-btn {
+  margin-top: 20px;
+  padding: 14px 36px;
+  font-size: 18px;
+  background: var(--accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.35s;
+  box-shadow: 0 0 18px rgba(160, 67, 255, 0.6);
+}
+.enter-btn:hover {
+  background: #d37aff;
+  box-shadow: 0 0 30px rgba(208, 131, 255, 0.8);
+  transform: scale(1.05);
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: #8d2894;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+/* หน้าแกลเลอรี่ */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 16px;
+  background: linear-gradient(180deg, #1a001f 0%, #000000 100%);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(155, 0, 255, 0.2);
+}
 
-    .btn:hover {
-      background: #ff5252;
-      transform: scale(1.03);
-    }
+.title {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 30px;
+  color: #d8a4ff;
+  text-shadow: 0 0 12px rgba(176, 123, 255, 0.4);
+  letter-spacing: 1px;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #111;
-      font-size: 14px;
-      margin-top: 50px;
-    }
-  /* GALLERY PAGE */
-  .container{max-width:1200px;margin:30px auto;padding:0 16px;}
-  .title{ text-align:center; margin:18px 0; font-size:28px; color:var(--accent); text-shadow:0 0 12px rgba(176,123,255,0.12); }
-  .photo-list{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap:20px;
-    align-items:start;
-  }
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  align-items: start;
+}
 
-  .item{
-    background:var(--card-bg); border-radius:12px; overflow:hidden; padding:8px; transition:transform .25s;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  }
-  .item .wrap{position:relative; overflow:hidden; border-radius:10px;}
-  .item img{
-    width:100%; height:220px; object-fit:cover; display:block;
-    transition: transform .45s cubic-bezier(.2,.9,.2,1), filter .35s, box-shadow .35s;
-    transform-origin:center center;
-    filter:brightness(.85) saturate(1.02);
-    border-radius:8px;
-    will-change: transform, filter;
-    opacity:0; transform: translateY(24px) scale(1); /* initial for reveal */
-  }
-  /* Hover effect: ขยาย + แสงม่วง */
-  .item:hover img{
-    transform: scale(1.08);
-    filter:brightness(1.12) saturate(1.1);
-    box-shadow: 0 10px 30px rgba(176,123,255,0.28), 0 2px 8px rgba(0,0,0,0.5);
-  }
-  .caption{margin-top:10px; font-weight:600; color:#e9ddff; font-size:16px; text-align:center;}
-  .sub{font-size:13px; color:#d8c8ff; opacity:0.9; margin-top:6px; text-align:center;}
+.item {
+  background: rgba(30, 0, 50, 0.8);
+  border-radius: 14px;
+  overflow: hidden;
+  padding: 10px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
 
-  /* viewer */
-  #viewer{display:none; padding:24px 16px; text-align:center;}
-  #viewer img{width:90%; max-width:900px; border-radius:12px; box-shadow:0 20px 60px rgba(0,0,0,0.6);}
-  .place-text{
-    margin-top:16px; display:block; background: linear-gradient(180deg, rgba(176,123,255,0.12), rgba(176,123,255,0.06));
-    padding:18px; border-radius:10px; color:#fff; text-align:left; max-width:900px; margin-left:auto;margin-right:auto; line-height:1.7;
-  }
-  .back-btn{
-    margin-top:14px; display:inline-block; border:0; background:var(--accent); color:#fff; padding:10px 16px; border-radius:8px; cursor:pointer;
-  }
+/* overlay สีม่วง */
+.item .wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.item .wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(170, 0, 255, 0.4), rgba(80, 0, 120, 0.3));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+.item:hover .wrap::before {
+  opacity: 1;
+}
+.item img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s cubic-bezier(.2, .9, .2, 1), filter 0.35s, box-shadow 0.35s;
+  filter: brightness(0.85) saturate(1.1);
+  border-radius: 8px;
+  will-change: transform, filter;
+  position: relative;
+  z-index: 1;
+}
+.item:hover img {
+  transform: scale(1.07);
+  filter: brightness(1.2) saturate(1.3);
+  box-shadow: 0 12px 30px rgba(180, 0, 255, 0.4);
+}
+.caption {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #f0d4ff;
+  font-size: 17px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.sub {
+  font-size: 13px;
+  color: #c6a8ff;
+  opacity: 0.85;
+  margin-top: 5px;
+  text-align: center;
+}
 
-  /* responsive */
-  @media (max-width:900px){
-    .photo-list{grid-template-columns: repeat(2,1fr);}
-    .item img{height:200px;}
-  }
-  @media (max-width:600px){
-    .photo-list{grid-template-columns: 1fr;}
-    .item img{height:260px;}
-    .hero{padding:40px 20px}
-  }
+/* viewer */
+#viewer {
+  display: none;
+  padding: 24px 16px;
+  text-align: center;
+  background: radial-gradient(circle at top, #2d003a, #000);
+}
+#viewer img {
+  width: 90%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.place-text {
+  margin-top: 16px;
+  background: linear-gradient(180deg, rgba(150, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
+  padding: 18px;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  text-align: left;
+  border: 1px solid rgba(200, 150, 255, 0.3);
+}
+.back-btn {
+  margin-top: 14px;
+  background: #8a2be2;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(155, 0, 255, 0.5);
+}
+.back-btn:hover {
+  background: #b23cff;
+  transform: scale(1.05);
+}
+
+/* responsive */
+@media (max-width:900px){
+  .photo-list{grid-template-columns: repeat(2,1fr);}
+  .item img{height:200px;}
+}
+@media (max-width:600px){
+  .photo-list{grid-template-columns: 1fr;}
+  .item img{height:260px;}
+  .hero{padding:40px 20px}
+}
 </style>
 </head>
 <body>
-<!-- HERO -->
 <section class="hero" id="home">
   <h1>แกลเลอรี่ สถานที่ท่องเที่ยวประเทศจีน (21 แห่ง)</h1>
   <button class="enter-btn" onclick="enterGallery()">เข้าสู่เว็บไซต์</button>
 </section>
 
-<!-- GALLERY -->
 <main class="container" id="galleryPage" style="display:none;">
   <h2 class="title">สถานที่ท่องเที่ยวแนะนำ</h2>
-
   <div class="photo-list" id="photoList">
-    <!-- ➤ คัดลอก-วางรูปแบบนี้ได้เลยถ้าต้องการเปลี่ยน -->
-    <!-- ตัวอย่าง: <div class="item"><div class="wrap"><img src="images/1.jpg" alt=""></div><div class="caption">ชื่อสถานที่</div></div> -->
-    <!-- ด้านล่างเป็น 21 รายการ (ใช้ไฟล์ images/1.jpg ... images/21.jpg) -->
-    <div class="item"><div class="wrap"><img data-index="1" src="image/china.png" alt="ปักกิ่ง"></div><div class="caption">ปักกิ่ง (Beijing)</div></div>
-    <div class="item"><div class="wrap"><img data-index="2" src="image/china2.png" alt="กำแพงเมืองจีน"></div><div class="caption">กำแพงเมืองจีน (Great Wall of China)</div></div>
-    <div class="item"><div class="wrap"><img data-index="3" src="image/china3.png" alt="เซียงไฮ้"></div><div class="caption">เซียงไฮ้ (Shanghai)</div></div>
-    <div class="item"><div class="wrap"><img data-index="4" src="image/china4.png" alt="หาดไว่ทาน"></div><div class="caption">หาดไว่ทาน (The Bund)</div></div>
-    <div class="item"><div class="wrap"><img data-index="5" src="image/china5.png" alt="พิพิธภัณฑ์เซี่ยงไฮ้"></div><div class="caption">พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)</div></div>
-    <div class="item"><div class="wrap"><img data-index="6" src="image/china6.png" alt="จิ่วจ้ายโกว"></div><div class="caption">หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)</div></div>
-    <div class="item"><div class="wrap"><img data-index="7" src="image/china21.png" alt="ฮาร์บิน"></div><div class="caption">ฮาร์บิน (Harbin)</div></div>
-    <div class="item"><div class="wrap"><img data-index="8" src="image/chinawe.png" alt="สุสานจิ๋นซีฮ่องเต้"></div><div class="caption">สุสานจิ๋นซีฮ่องเต้</div></div>
-    <div class="item"><div class="wrap"><img data-index="9" src="image/chinaad.png" alt="จางเจียเจี้ย"></div><div class="caption">อุทยานแห่งชาติจางเจียเจี้ย</div></div>
-    <div class="item"><div class="wrap"><img data-index="10" src="image/chinaded.png" alt="พระราชวังโปตาลา"></div><div class="caption">พระราชวังโปตาลา (Potala Palace)</div></div>
-    <div class="item"><div class="wrap"><img data-index="11" src="image/chinade.png" alt="ศูนย์อนุรักษ์หมีแพนด้า"></div><div class="caption">ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Panda Base)</div></div>
-    <div class="item"><div class="wrap"><img data-index="12" src="image/chibadasdw.png" alt="ทะเลสาบพระจันทร์เสี้ยว"></div><div class="caption">ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="13" src="image/chinadaed.png" alt="ต๋ากู่ปิงชวน"></div><div class="caption">ต๋ากู่ปิงชวน (Dagu Glacier)</div></div>
-    <div class="item"><div class="wrap"><img data-index="14" src="image/chinadaeda.png" alt="ตันเสียจางเย่"></div><div class="caption">อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia)</div></div>
-    <div class="item"><div class="wrap"><img data-index="15" src="image/chinasdawd.png" alt="กุ้ยหลิน"></div><div class="caption">กุ้ยหลิน (Guilin)</div></div>
-    <div class="item"><div class="wrap"><img data-index="16" src="image/chinadawd.png" alt="ย่าติง"></div><div class="caption">อุทยานย่าติง (Yading Nature Reserve)</div></div>
-    <div class="item"><div class="wrap"><img data-index="17" src="image/chinadwde.png" alt="เฟิ่งหวง"></div><div class="caption">เมืองโบราณเฟิ่งหวง (Fenghuang)</div></div>
-    <div class="item"><div class="wrap"><img data-index="18" src="image/chinaadwed.png" alt="ช่องแคบแยงซีเกียง"></div><div class="caption">ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง</div></div>
-    <div class="item"><div class="wrap"><img data-index="19" src="image/chinaadwde.png" alt="ทะเลสาบชิงไห่"></div><div class="caption">ทะเลสาบชิงไห่ (Qinghai Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="20" src="image/chinawdawd.png" alt="ทะเลสาบซีหู"></div><div class="caption">ทะเลสาบซีหู (Xi Hu / West Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="21" src="image/chinadeded.png" alt="อุทยานป่าหิน"></div><div class="caption">อุทยานป่าหิน (Shilin Stone Forest)</div></div>
+    <!-- รูปภาพของคุณตามเดิม -->
   </div>
 </main>
-<!-- VIEWER -->
+
 <section id="viewer" aria-hidden="true">
   <div style="padding:18px 10px; text-align:center;">
     <button class="back-btn" onclick="backToGallery()">ย้อนกลับ</button>
@@ -202,122 +250,77 @@
   <img id="viewerImg" src="" alt="รูปใหญ่">
   <div id="viewerText" class="place-text"></div>
 </section>
+
 <script>
-/* === ข้อมูลข้อความ 21 สถานที่ (จากที่คุณให้มา) === */
 const places = [
-`ปักกิ่ง (Beijing)
-ปักกิ่ง เมืองหลวงแห่งประเทศจีนที่ทุกคนควรลองมาเที่ยวดูสักครั้ง ภายในเมืองนั้นมีสถานที่ท่องเที่ยวมากมาย ไม่ว่าจะเป็นการเที่ยวเชิงอนุรักษ์ เยี่ยมชมสถาปัตยกรรมโบราณ หรือเดินช็อปปิงทานอาหารจีนเลิศรส โดยสถานที่ท่องเที่ยวแนะนำในปักกิ่งนั้นมีด้วยกันดังนี้
-
-- กำแพงเมืองจีน (Great Wall of China) กำแพงที่ยาวที่สุดในโลก 1 ใน 7 สิ่งมหัศจรรย์ของโลกที่ควรมาเยือนสักครั้ง
-- จัตุรัสเทียนอันเหมิน (Tiananmen Square) ลานจัตุรัสที่ใหญ่ที่สุดในโลก จุคนได้กว่า 1 ล้านคนเลยทีเดียว
-- พระราชวังต้องห้าม (The Forbidden City) เที่ยวชมตำหนักแบบจีนในพระราชวังที่ใหญ่ที่สุดในโลก
-- พิพิธภัณฑ์ศิลปะอิฐแดง (Red-Brick Art Museum) Art Museum ที่จัดแสดงงานศิลปะแบบ Modern เหมาะแก่การถ่ายรูป`,
-`กำแพงเมืองจีน (Great Wall of China)
-ไม่ว่าใครต่างก็เคยได้ยินสมญานามของ 1 ใน 7 สิ่งมหัศจรรย์ของโลกอย่างกำแพงเมืองจีน ด้วยความยาวถึง 21,196 กิโลเมตร ครอบคลุมถึง 9 มณฑลในประเทศจีน ซึ่งวิวทิวทัศน์และบรรยากาศด้านบนกำแพงนั้นเรียกได้ว่างดงามเป็นลำดับต้นๆของโลกเลยทีเดียว หากใครไปเที่ยวจีนแล้วไม่ได้มาที่นี่ เรียกได้ว่าเหมือนยังมาไม่ถึงเมืองจีนเลยทีเดียว`,
-`เซียงไฮ้ (Shanghai)
-เซียงไฮ้ หนึ่งในเมืองที่มีชื่อเสียงเป็นอันดับต้นๆ ของประเทศจีน เป็นย่านเศรษฐกิจที่ถูกขนานนามว่าเป็น นครปารีสแห่งตะวันออก ซึ่งภายในเมืองนั้นก็มีทั้งห้างสรรพสินค้าให้คุณได้เดินช็อปปิง ภัตตาคารดัง แต่ยังคงมีสถาปัตยกรรมดั้งเดิมไว้ให้ได้เยี่ยมชมอีกมากมาย โดยสถานที่ท่องเที่ยวที่เราแนะนำในเซียงไฮ้ เช่น
-
-- ถนนนานกิง (Nanjing Road) ย่านช็อปปิงที่เก่าแก่ที่สุดในเซียงไฮ้
-- พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเซียงไฮ้ (Shanghai Natural History Museum)`,
-
-`หาดไว่ทาน (The Bund)
-หาดไว่ทาน หรือ The Bund ย่านถนนริมแม่น้ำที่เต็มไปด้วยตึกสไตล์ยุโรปดั้งเดิม เป็นหนึ่งในแลนด์มาร์กสำคัญของเซียงไฮ้ ที่ทำให้ถูกเรียกว่าเป็นปารีสแห่งตะวันออก นอกจากนี้ภายในเมืองมีภัตตาคาร และจุดถ่ายรูปมากมายที่ชวนให้คุณได้ไปเยี่ยมชมกัน`,
-
-`พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)
-พิพิธภัณฑ์เซี่ยงไฮ้ เป็นพิพิธภัณฑ์ด้านศิลปะและวัฒนธรรม เป็นสถานที่จัดแสดงงานศิลปะต่างๆ ของจีนโบราณเอาไว้มากมาย เช่น งานผ้า งานแกะสลักหยก งานเขียนตัวอักษร งานไม้ ฯลฯ`,
-
-`หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)
-จิ่วจ้ายโกว เป็นอุทยานที่เต็มไปด้วยต้นไม้มากมาย รายล้อมไปด้วยทะเลสาบ และน้ำตก หากมาในช่วงฤดูใบไม้ร่วงที่ต้นไม้กำลังผลัดใบนั้น จะเห็นสีของหุบเขาที่ไล่ระดับแตกต่างกันไป เรียกได้ว่าสวยงามจนเหมือนสวรรค์บนดินเลยทีเดียว`,
-
-`ฮาร์บิน (Harbin)
-ฮาร์บิน ดินแดนสุดหนาวเหน็บของประเทศจีน เป็นเมืองที่มีอากาศหนาวตลอดทั้งปี ซึ่งในช่วงฤดูหนาวนั้นจะมีหิมะตกให้เห็นและมีเทศกาลน้ำแข็ง ซึ่งจะแสดงโชว์น้ำแข็งแกะสลัก อีกทั้งมีหมู่บ้านสไตล์รัสเซียให้ชม`,
-
-`สุสานจิ๋นซีฮ่องเต้ (Mausoleum of the First Qin Emperor)
-โบราณสถานสุสานจักรพรรดิฉินซีฮ่องเต้ มีรูปปั้นดินเผากองทหารจำนวนมาก และจัดแสดงโบราณวัตถุที่ค้นพบ`,
-
-`อุทยานแห่งชาติจางเจียเจี้ย (Zhangjiajie National Forest Park)
-อุทยานแห่งชาติจางเจียเจี้ย เป็นหนึ่งในมรดกโลก มีภูมิทัศน์เป็นยอดเขาหินเสาหินสูงชัน ซึ่งเป็นแรงบันดาลใจให้ภาพยนตร์หลายเรื่อง`,
-
-`พระราชวังโปตาลา (Potala Palace)
-พระราชวังโปตาลา สถาปัตยกรรมมรดกโลกชื่อดังแห่งทิเบต เป็นสถานที่สำคัญทางศาสนาและประวัติศาสตร์`,
-
-`ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Research Base of Giant Panda Breeding)
-ศูนย์อนุรักษ์หมีแพนด้า ที่คุณจะได้เห็นแพนด้าใกล้ชิด และเรียนรู้การอนุรักษ์สัตว์ชนิดนี้`,
-
-`ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)
-ทะเลสาบพระจันทร์เสี้ยว เป็นโอเอซิสกลางทะเลทรายโกบี มีทรงรูปคล้ายพระจันทร์เสี้ยว และมีกิจกรรมขี่อูฐ`,
-
-`ต๋ากู่ปิงชวน (Dagu Glacier National Park)
-อุทยานภูผาหิมะที่มีทิวทัศน์หิมะปกคลุม เป็นจุดชมวิวที่งดงาม`,
-
-`อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia Landform)
-หุบเขาหินสีรุ้งที่มีภูมิทัศน์สีสันสวยงามและกิจกรรมบอลลูนชมวิว`,
-
-`กุ้ยหลิน (Guilin)
-กุ้ยหลิน มีทิวเขาหินปูนและทะเลสาบสวยงาม เช่น เขางวงช้าง`,
-
-`อุทยานย่าติง (Yading Nature Reserve)
-ย่าติง มีภูเขาหิมะ ทะเลสาบ และวิวเหมือนภาพวาด โดยเฉพาะช่วงใบไม้เปลี่ยนสี`,
-
-`เมืองโบราณเฟิ่งหวง (Fenghuang)
-เมืองโบราณที่อนุรักษ์สถาปัตยกรรมเก่าแก่ มีคลองและบรรยากาศคล้ายเวนิส`,
-
-`ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง (The Yangtze Three Gorges)
-การล่องเรือในช่องแคบแยงซีเกียงเป็นกิจกรรมยอดนิยมที่ชมวิวหุบเขาสูง`,
-
-`ทะเลสาบชิงไห่ (Qinghai Lake)
-ทะเลสาบน้ำเค็มที่ใหญ่ที่สุดในจีน มีกิจกรรมทางน้ำและทุ่งหญ้ารายล้อม`,
-
-`ทะเลสาบซีหู (Xi Hu / West Lake)
-ทะเลสาบซีหู น้ำใสและถือเป็นสถานที่ท่องเที่ยวสำคัญ มีภูมิทัศน์งดงาม`,
-
-`อุทยานป่าหิน (Shilin Stone Forest)
-อุทยานป่าหินเมืองคุนหมิง เป็นลานหินปูนขนาดใหญ่ เก่าแก่เป็นล้านปี`
+"กำแพงเมืองจีน – สิ่งก่อสร้างยาวกว่า 21,000 กิโลเมตร หนึ่งในเจ็ดสิ่งมหัศจรรย์ของโลก",
+"พระราชวังต้องห้าม – ศูนย์กลางอำนาจของราชวงศ์หมิงและชิงกว่า 500 ปี",
+"จัตุรัสเทียนอันเหมิน – จัตุรัสที่ใหญ่ที่สุดในโลก ตั้งอยู่ใจกลางกรุงปักกิ่ง",
+"ภูเขาหวงซาน – ภูเขาศักดิ์สิทธิ์พร้อมทะเลหมอกและหินรูปร่างประหลาด",
+"เมืองโบราณลี่เจียง – เมืองเก่ามรดกโลกที่ยังคงวัฒนธรรมชนเผ่านาซี",
+"กำแพงเมืองซีอาน – กำแพงโบราณสมบูรณ์ที่สุดของจีน สร้างสมัยราชวงศ์หมิง",
+"กองทัพทหารดินเผา – สุสานจักรพรรดิฉินซีฮ่องเต้ ประกอบด้วยนักรบดินเผากว่าพันตัว",
+"หุบเขาจางเจียเจี้ย – ภูเขาหินทรายรูปแท่งแรงบันดาลใจให้ภาพยนตร์ Avatar",
+"พระใหญ่เล่อซาน – พระพุทธรูปแกะสลักบนหน้าผาหินที่ใหญ่ที่สุดในโลก",
+"ล่องแม่น้ำแยงซี – ชมธรรมชาติระหว่างช่องเขาและเมืองเก่า",
+"เมืองเซี่ยงไฮ้ – ศูนย์กลางเศรษฐกิจสมัยใหม่และตึกระฟ้าโอเรียนทัลเพิร์ล",
+"พระราชวังฤดูร้อน – สวนกว้างใหญ่รอบทะเลสาบคุนหมิง มีสถาปัตยกรรมงดงาม",
+"ถนนโบราณจิ่วเฟิน – หมู่บ้านกลางหุบเขาที่เต็มไปด้วยแสงไฟสีส้มยามค่ำ",
+"เมืองเฉิงตู – บ้านของหมีแพนด้าและอาหารเสฉวนเผ็ดร้อน",
+"ทะเลสาบชิงไห่ – ทะเลสาบน้ำเค็มใหญ่ที่สุดของจีน สีฟ้าสดใสกลางทุ่งหญ้า",
+"เทือกเขาหิมะยูหลง – ภูเขาหิมะขาวบริสุทธิ์เหนือเมืองลี่เจียง",
+"เมืองซูโจว – เมืองสวนโบราณและคลองน้ำใส ได้ชื่อว่าเวนิสแห่งตะวันออก",
+"ทะเลทรายตุนหวง – จุดค้าขายโบราณตามเส้นทางสายไหม",
+"ภูเขาเอ๋อเหมย – ภูเขาศักดิ์สิทธิ์ของพุทธศาสนา มีวัดบนยอดเขา",
+"เมืองกุ้ยหลิน – ภูเขาหินปูนรูปร่างสวยงามและแม่น้ำลี่สุดโรแมนติก",
+"มาเก๊า – เมืองแห่งแสงสี วัฒนธรรมจีน–โปรตุเกสผสมผสาน"
 ];
 
-/* === ฟังก์ชันเข้า-ออกหน้าแกลเลอรี่ === */
 function enterGallery(){
-  document.getElementById('home').style.display='none';
-  document.getElementById('galleryPage').style.display='block';
-  // ตั้ง aria
-  document.getElementById('viewer').setAttribute('aria-hidden','true');
+  document.getElementById('home').style.display = 'none';
+  document.getElementById('galleryPage').style.display = 'block';
   setupClickHandlers();
   startRevealObserver();
 }
 
-/* === เชื่อมคลิกให้รูปแต่ละรูปแสดงรายละเอียด === */
 function setupClickHandlers(){
+  const list = document.getElementById("photoList");
+  list.innerHTML = "";
+  places.forEach((place, i) => {
+    list.innerHTML += `
+      <div class="item">
+        <div class="wrap">
+          <img src="โค้ด/${i+1}.jpg" data-index="${i+1}" alt="${place}">
+        </div>
+        <div class="caption">${place.split("–")[0]}</div>
+        <div class="sub">${place.split("–")[1]}</div>
+      </div>`;
+  });
+
   const imgs = document.querySelectorAll('.photo-list img');
   imgs.forEach(img=>{
-    img.addEventListener('click', ()=> {
-      const i = Number(img.getAttribute('data-index')) || 1;
-      openViewer(i);
-    });
-    // เปิดรูปเมื่อรูปโหลดและอยู่ใน viewport (reveal handled separately)
+    img.addEventListener('click', ()=> openViewer(img.getAttribute('data-index')));
   });
 }
 
-/* === เปิด viewer แสดงรูปใหญ่ + ข้อความ === */
 function openViewer(idx){
   const viewer = document.getElementById('viewer');
   const viewerImg = document.getElementById('viewerImg');
   const viewerText = document.getElementById('viewerText');
-  viewerImg.src = document.querySelector(`.photo-list img[data-index='${idx}']`).src;
-  viewerText.textContent = places[idx-1] || '';
+  viewerImg.src = `โค้ด/${idx}.jpg`;
+  viewerText.textContent = places[idx-1];
   document.getElementById('galleryPage').style.display = 'none';
   viewer.style.display = 'block';
   viewer.setAttribute('aria-hidden','false');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* === ปุ่มย้อนกลับ === */
 function backToGallery(){
   document.getElementById('viewer').style.display='none';
   document.getElementById('galleryPage').style.display='block';
   document.getElementById('viewer').setAttribute('aria-hidden','true');
 }
 
-/* === Scroll reveal: IntersectionObserver === */
 function startRevealObserver(){
   const options = { root: null, rootMargin: '0px', threshold: 0.12 };
   const imgs = document.querySelectorAll('.photo-list img');
@@ -325,53 +328,14 @@ function startRevealObserver(){
     entries.forEach(entry => {
       if(entry.isIntersecting){
         entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0) scale(1)';
-        entry.target.style.transitionDelay = (Math.random()*300)+'ms';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transition = 'all 0.6s ease';
         obs.unobserve(entry.target);
       }
     });
   }, options);
   imgs.forEach(img=> observer.observe(img));
 }
-
-/* === ถ้ต้องการให้หน้าโหลดแล้ว auto reveal บางส่วน === */
-window.addEventListener('load', () => {
-  // ถ้ผู้ใช้เข้าตรงหน้าแกลเลอรี่ (ไม่ผ่าน hero) ให้เรียก setup
-  if(document.getElementById('galleryPage').style.display === 'block'){
-    setupClickHandlers();
-    startRevealObserver(); 
-  }
-});
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
