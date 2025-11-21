@@ -6,16 +6,16 @@
 <title>แกลเลอรี่ 21 สถานที่ท่องเที่ยวในประเทศจีน</title>
 <style>
 :root {
-  --main: #720A00;
-  --accent: #D4AF37;
-  --bg-dark: #FAB12F;
+  --main: #DD0303;      /* สีแดงใหม่ */
+  --accent: #FAB12F;    /* สีทอง */
+  --bg-dark: #FA812F;   /* สีส้มเข้ม */
 }
 
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #720A00, #720A00);
-  color: white;
+  background: linear-gradient(135deg, #DD0303, #FA812F);
+  color: #FEF3E2;
   overflow-x: hidden;
 }
 
@@ -29,7 +29,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #FEF3E2;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 .hero h1 {
@@ -47,11 +47,11 @@ body {
   color: white;
   font-weight: bold;
   transition: 0.35s;
-  box-shadow: 0 0 18px rgba(160, 67, 255, 0.6);
+  box-shadow: 0 0 18px rgba(250,129,47,0.6);
 }
 .enter-btn:hover {
-  background: #d37aff;
-  box-shadow: 0 0 30px rgba(208, 131, 255, 0.8);
+  background: #FA812F;
+  box-shadow: 0 0 30px rgba(250,129,47,0.8);
   transform: scale(1.05);
 }
 
@@ -60,17 +60,17 @@ body {
   max-width: 1200px;
   margin: 30px auto;
   padding: 0 16px;
-  background: linear-gradient(180deg, #930A00 0%, #720A00 100%);
+  background: linear-gradient(180deg, #FA812F 0%, #DD0303 100%);
   border-radius: 20px;
-  box-shadow: 0 0 40px rgba(155, 0, 255, 0.2);
+  box-shadow: 0 0 40px rgba(250,129,47,0.2);
 }
 
 .title {
   text-align: center;
   margin: 30px 0;
   font-size: 30px;
-  color: #d8a4ff;
-  text-shadow: 0 0 12px rgba(176, 123, 255, 0.4);
+  color: #FEF3E2;
+  text-shadow: 0 0 12px rgba(250,129,47,0.4);
   letter-spacing: 1px;
 }
 
@@ -82,12 +82,12 @@ body {
 }
 
 .item {
-  background: rgba(30, 0, 50, 0.8);
+  background: rgba(250,129,47,0.15);
   border-radius: 14px;
   overflow: hidden;
   padding: 10px;
   transition: transform 0.25s, box-shadow 0.25s;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
   position: relative;
 }
 
@@ -99,18 +99,19 @@ body {
   opacity: 0;
   transform: translateY(20px) scale(0.98);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  filter: brightness(0.85) saturate(1.1);
+  filter: brightness(0.9) saturate(1.1);
   border-radius: 8px;
 }
 .item:hover img {
   transform: scale(1.07);
   filter: brightness(1.2) saturate(1.3);
-  box-shadow: 0 12px 30px rgba(180, 0, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(250,129,47,0.4);
 }
+
 .caption {
   margin-top: 12px;
   font-weight: 600;
-  color: #f0d4ff;
+  color: #FEF3E2;
   font-size: 17px;
   text-align: center;
 }
@@ -120,7 +121,7 @@ body {
   display: none;
   padding: 24px 16px;
   text-align: center;
-  background: radial-gradient(circle at top, #2d003a, #000);
+  background: radial-gradient(circle at top, #FA812F, #DD0303);
 }
 #viewer img {
   width: 90%;
@@ -130,31 +131,32 @@ body {
 }
 .place-text {
   margin-top: 16px;
-  background: linear-gradient(180deg, rgba(150, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
+  background: linear-gradient(180deg, rgba(250,129,47,0.25), rgba(0,0,0,0.7));
   padding: 18px;
   border-radius: 10px;
-  color: #fff;
+  color: #FEF3E2;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
   text-align: left;
-  border: 1px solid rgba(200, 150, 255, 0.3);
+  border: 1px solid rgba(250,129,47,0.3);
   white-space: pre-line;
 }
+
 .back-btn {
   margin-top: 14px;
-  background: #8a2be2;
+  background: #FA812F;
   color: white;
   padding: 10px 18px;
   border-radius: 8px;
   cursor: pointer;
   border: none;
   transition: 0.3s;
-  box-shadow: 0 0 12px rgba(155, 0, 255, 0.5);
+  box-shadow: 0 0 12px rgba(250,129,47,0.5);
 }
 .back-btn:hover {
-  background: #b23cff;
+  background: #FAB12F;
   transform: scale(1.05);
 }
 
@@ -170,168 +172,3 @@ body {
 </style>
 </head>
 <body>
-
-<section class="hero" id="home">
-  <h1>แกลเลอรี่ 21 สถานที่ท่องเที่ยวในประเทศจีน</h1>
-  <button class="enter-btn" onclick="enterGallery()">เข้าสู่เว็บไซต์</button>
-</section>
-
-<main class="container" id="galleryPage" style="display:none;">
-  <h2 class="title">สถานที่ท่องเที่ยวแนะนำ</h2>
-  <div class="photo-list" id="photoList">
-    <div class="item"><div class="wrap"><img data-index="1" src="image/china.png" alt="ปักกิ่ง"></div><div class="caption">ปักกิ่ง (Beijing)</div></div>
-    <div class="item"><div class="wrap"><img data-index="2" src="image/china2.png" alt="กำแพงเมืองจีน"></div><div class="caption">กำแพงเมืองจีน (Great Wall of China)</div></div>
-    <div class="item"><div class="wrap"><img data-index="3" src="image/china3.png" alt="เซียงไฮ้"></div><div class="caption">เซียงไฮ้ (Shanghai)</div></div>
-    <div class="item"><div class="wrap"><img data-index="4" src="image/china4.png" alt="หาดไว่ทาน"></div><div class="caption">หาดไว่ทาน (The Bund)</div></div>
-    <div class="item"><div class="wrap"><img data-index="5" src="image/china5.png" alt="พิพิธภัณฑ์เซี่ยงไฮ้"></div><div class="caption">พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)</div></div>
-    <div class="item"><div class="wrap"><img data-index="6" src="image/china6.png" alt="จิ่วจ้ายโกว"></div><div class="caption">หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)</div></div>
-    <div class="item"><div class="wrap"><img data-index="7" src="image/china21.png" alt="ฮาร์บิน"></div><div class="caption">ฮาร์บิน (Harbin)</div></div>
-    <div class="item"><div class="wrap"><img data-index="8" src="image/chinawe.png" alt="สุสานจิ๋นซีฮ่องเต้"></div><div class="caption">สุสานจิ๋นซีฮ่องเต้</div></div>
-    <div class="item"><div class="wrap"><img data-index="9" src="image/chinaad.png" alt="จางเจียเจี้ย"></div><div class="caption">อุทยานแห่งชาติจางเจียเจี้ย</div></div>
-    <div class="item"><div class="wrap"><img data-index="10" src="image/chinaded.png" alt="พระราชวังโปตาลา"></div><div class="caption">พระราชวังโปตาลา (Potala Palace)</div></div>
-    <div class="item"><div class="wrap"><img data-index="11" src="image/chinade.png" alt="ศูนย์อนุรักษ์หมีแพนด้า"></div><div class="caption">ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Panda Base)</div></div>
-    <div class="item"><div class="wrap"><img data-index="12" src="image/chibadasdw.png" alt="ทะเลสาบพระจันทร์เสี้ยว"></div><div class="caption">ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="13" src="image/chinadaed.png" alt="ต๋ากู่ปิงชวน"></div><div class="caption">ต๋ากู่ปิงชวน (Dagu Glacier)</div></div>
-    <div class="item"><div class="wrap"><img data-index="14" src="image/chinadaeda.png" alt="ตันเสียจางเย่"></div><div class="caption">อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia)</div></div>
-    <div class="item"><div class="wrap"><img data-index="15" src="image/chinasdawd.png" alt="กุ้ยหลิน"></div><div class="caption">กุ้ยหลิน (Guilin)</div></div>
-    <div class="item"><div class="wrap"><img data-index="16" src="image/chinadawd.png" alt="ย่าติง"></div><div class="caption">อุทยานย่าติง (Yading Nature Reserve)</div></div>
-    <div class="item"><div class="wrap"><img data-index="17" src="image/chinadwde.png" alt="เฟิ่งหวง"></div><div class="caption">เมืองโบราณเฟิ่งหวง (Fenghuang)</div></div>
-    <div class="item"><div class="wrap"><img data-index="18" src="image/chinaadwed.png" alt="ช่องแคบแยงซีเกียง"></div><div class="caption">ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง</div></div>
-    <div class="item"><div class="wrap"><img data-index="19" src="image/chinaadwde.png" alt="ทะเลสาบชิงไห่"></div><div class="caption">ทะเลสาบชิงไห่ (Qinghai Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="20" src="image/chinawdawd.png" alt="ทะเลสาบซีหู"></div><div class="caption">ทะเลสาบซีหู (Xi Hu / West Lake)</div></div>
-    <div class="item"><div class="wrap"><img data-index="21" src="image/chinadeded.png" alt="อุทยานป่าหิน"></div><div class="caption">อุทยานป่าหิน (Shilin Stone Forest)</div></div>
-  </div>
-</main>
-
-<section id="viewer" aria-hidden="true">
-  <div style="padding:18px 10px; text-align:center;">
-    <button class="back-btn" onclick="backToGallery()">ย้อนกลับ</button>
-  </div>
-  <img id="viewerImg" src="" alt="รูปใหญ่">
-  <div id="viewerText" class="place-text"></div>
-</section>
-
-<script>
-const places = [
-`ปักกิ่ง (Beijing)
-ปักกิ่ง เมืองหลวงแห่งประเทศจีนที่ทุกคนควรลองมาเที่ยวดูสักครั้ง ภายในเมืองนั้นมีสถานที่ท่องเที่ยวมากมาย ไม่ว่าจะเป็นการเที่ยวเชิงอนุรักษ์ เยี่ยมชมสถาปัตยกรรมโบราณ หรือเดินช็อปปิงทานอาหารจีนเลิศรส โดยสถานที่ท่องเที่ยวแนะนำในปักกิ่งนั้นมีด้วยกันดังนี้
-
-- กำแพงเมืองจีน (Great Wall of China) กำแพงที่ยาวที่สุดในโลก 1 ใน 7 สิ่งมหัศจรรย์ของโลกที่ควรมาเยือนสักครั้ง
-- จัตุรัสเทียนอันเหมิน (Tiananmen Square) ลานจัตุรัสที่ใหญ่ที่สุดในโลก จุคนได้กว่า 1 ล้านคนเลยทีเดียว
-- พระราชวังต้องห้าม (The Forbidden City) เที่ยวชมตำหนักแบบจีนในพระราชวังที่ใหญ่ที่สุดในโลก
-- พิพิธภัณฑ์ศิลปะอิฐแดง (Red-Brick Art Museum) Art Museum ที่จัดแสดงงานศิลปะแบบ Modern เหมาะแก่การถ่ายรูป`,
-`กำแพงเมืองจีน (Great Wall of China)
-ไม่ว่าใครต่างก็เคยได้ยินสมญานามของ 1 ใน 7 สิ่งมหัศจรรย์ของโลกอย่างกำแพงเมืองจีน ด้วยความยาวถึง 21,196 กิโลเมตร ครอบคลุมถึง 9 มณฑลในประเทศจีน ซึ่งวิวทิวทัศน์และบรรยากาศด้านบนกำแพงนั้นเรียกได้ว่างดงามเป็นลำดับต้นๆของโลกเลยทีเดียว หากใครไปเที่ยวจีนแล้วไม่ได้มาที่นี่ เรียกได้ว่าเหมือนยังมาไม่ถึงเมืองจีนเลยทีเดียว`,
-`เซียงไฮ้ (Shanghai)
-เซียงไฮ้ หนึ่งในเมืองที่มีชื่อเสียงเป็นอันดับต้นๆ ของประเทศจีน เป็นย่านเศรษฐกิจที่ถูกขนานนามว่าเป็น นครปารีสแห่งตะวันออก ซึ่งภายในเมืองนั้นก็มีทั้งห้างสรรพสินค้าให้คุณได้เดินช็อปปิง ภัตตาคารดัง แต่ยังคงมีสถาปัตยกรรมดั้งเดิมไว้ให้ได้เยี่ยมชมอีกมากมาย โดยสถานที่ท่องเที่ยวที่เราแนะนำในเซียงไฮ้ เช่น
-
-- ถนนนานกิง (Nanjing Road) ย่านช็อปปิงที่เก่าแก่ที่สุดในเซียงไฮ้
-- พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเซียงไฮ้ (Shanghai Natural History Museum)`,
-
-`หาดไว่ทาน (The Bund)
-หาดไว่ทาน หรือ The Bund ย่านถนนริมแม่น้ำที่เต็มไปด้วยตึกสไตล์ยุโรปดั้งเดิม เป็นหนึ่งในแลนด์มาร์กสำคัญของเซียงไฮ้ ที่ทำให้ถูกเรียกว่าเป็นปารีสแห่งตะวันออก นอกจากนี้ภายในเมืองมีภัตตาคาร และจุดถ่ายรูปมากมายที่ชวนให้คุณได้ไปเยี่ยมชมกัน`,
-
-`พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)
-พิพิธภัณฑ์เซี่ยงไฮ้ เป็นพิพิธภัณฑ์ด้านศิลปะและวัฒนธรรม เป็นสถานที่จัดแสดงงานศิลปะต่างๆ ของจีนโบราณเอาไว้มากมาย เช่น งานผ้า งานแกะสลักหยก งานเขียนตัวอักษร งานไม้ ฯลฯ`,
-
-`หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)
-จิ่วจ้ายโกว เป็นอุทยานที่เต็มไปด้วยต้นไม้มากมาย รายล้อมไปด้วยทะเลสาบ และน้ำตก หากมาในช่วงฤดูใบไม้ร่วงที่ต้นไม้กำลังผลัดใบนั้น จะเห็นสีของหุบเขาที่ไล่ระดับแตกต่างกันไป เรียกได้ว่าสวยงามจนเหมือนสวรรค์บนดินเลยทีเดียว`,
-
-`ฮาร์บิน (Harbin)
-ฮาร์บิน ดินแดนสุดหนาวเหน็บของประเทศจีน เป็นเมืองที่มีอากาศหนาวตลอดทั้งปี ซึ่งในช่วงฤดูหนาวนั้นจะมีหิมะตกให้เห็นและมีเทศกาลน้ำแข็ง ซึ่งจะแสดงโชว์น้ำแข็งแกะสลัก อีกทั้งมีหมู่บ้านสไตล์รัสเซียให้ชม`,
-
-`สุสานจิ๋นซีฮ่องเต้ (Mausoleum of the First Qin Emperor)
-โบราณสถานสุสานจักรพรรดิฉินซีฮ่องเต้ มีรูปปั้นดินเผากองทหารจำนวนมาก และจัดแสดงโบราณวัตถุที่ค้นพบ`,
-
-`อุทยานแห่งชาติจางเจียเจี้ย (Zhangjiajie National Forest Park)
-อุทยานแห่งชาติจางเจียเจี้ย เป็นหนึ่งในมรดกโลก มีภูมิทัศน์เป็นยอดเขาหินเสาหินสูงชัน ซึ่งเป็นแรงบันดาลใจให้ภาพยนตร์หลายเรื่อง`,
-
-`พระราชวังโปตาลา (Potala Palace)
-พระราชวังโปตาลา สถาปัตยกรรมมรดกโลกชื่อดังแห่งทิเบต เป็นสถานที่สำคัญทางศาสนาและประวัติศาสตร์`,
-
-`ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Research Base of Giant Panda Breeding)
-ศูนย์อนุรักษ์หมีแพนด้า ที่คุณจะได้เห็นแพนด้าใกล้ชิด และเรียนรู้การอนุรักษ์สัตว์ชนิดนี้`,
-
-`ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)
-ทะเลสาบพระจันทร์เสี้ยว เป็นโอเอซิสกลางทะเลทรายโกบี มีทรงรูปคล้ายพระจันทร์เสี้ยว และมีกิจกรรมขี่อูฐ`,
-
-`ต๋ากู่ปิงชวน (Dagu Glacier National Park)
-อุทยานภูผาหิมะที่มีทิวทัศน์หิมะปกคลุม เป็นจุดชมวิวที่งดงาม`,
-
-`อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia Landform)
-หุบเขาหินสีรุ้งที่มีภูมิทัศน์สีสันสวยงามและกิจกรรมบอลลูนชมวิว`,
-
-`กุ้ยหลิน (Guilin)
-กุ้ยหลิน มีทิวเขาหินปูนและทะเลสาบสวยงาม เช่น เขางวงช้าง`,
-
-`อุทยานย่าติง (Yading Nature Reserve)
-ย่าติง มีภูเขาหิมะ ทะเลสาบ และวิวเหมือนภาพวาด โดยเฉพาะช่วงใบไม้เปลี่ยนสี`,
-
-`เมืองโบราณเฟิ่งหวง (Fenghuang)
-เมืองโบราณที่อนุรักษ์สถาปัตยกรรมเก่าแก่ มีคลองและบรรยากาศคล้ายเวนิส`,
-
-`ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง (The Yangtze Three Gorges)
-การล่องเรือในช่องแคบแยงซีเกียงเป็นกิจกรรมยอดนิยมที่ชมวิวหุบเขาสูง`,
-
-`ทะเลสาบชิงไห่ (Qinghai Lake)
-ทะเลสาบน้ำเค็มที่ใหญ่ที่สุดในจีน มีกิจกรรมทางน้ำและทุ่งหญ้ารายล้อม`,
-
-`ทะเลสาบซีหู (Xi Hu / West Lake)
-ทะเลสาบซีหู น้ำใสและถือเป็นสถานที่ท่องเที่ยวสำคัญ มีภูมิทัศน์งดงาม`,
-
-`อุทยานป่าหิน (Shilin Stone Forest)
-อุทยานป่าหินเมืองคุนหมิง เป็นลานหินปูนขนาดใหญ่ เก่าแก่เป็นล้านปี`
-];
-
-function enterGallery(){
-  document.getElementById('home').style.display='none';
-  document.getElementById('galleryPage').style.display='block';
-  setupClickHandlers();
-  startRevealObserver();
-}
-
-function setupClickHandlers(){
-  document.querySelectorAll('.photo-list img').forEach(img=>{
-    img.addEventListener('click', ()=>openViewer(Number(img.dataset.index)));
-  });
-}
-
-function openViewer(idx){
-  const viewer = document.getElementById('viewer');
-  const viewerImg = document.getElementById('viewerImg');
-  const viewerText = document.getElementById('viewerText');
-  const img = document.querySelector(`.photo-list img[data-index='${idx}']`);
-  viewerImg.src = img.src;
-  viewerText.textContent = places[idx-1] || '';
-  document.getElementById('galleryPage').style.display = 'none';
-  viewer.style.display = 'block';
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-function backToGallery(){
-  document.getElementById('viewer').style.display='none';
-  document.getElementById('galleryPage').style.display='block';
-}
-
-function startRevealObserver(){
-  const options = { root: null, threshold: 0.12 };
-  const imgs = document.querySelectorAll('.photo-list img');
-  const obs = new IntersectionObserver((entries, o)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        e.target.style.opacity=1;
-        e.target.style.transform='translateY(0) scale(1)';
-        o.unobserve(e.target);
-      }
-    });
-  }, options);
-  imgs.forEach(img=>obs.observe(img));
-}
-</script>
-</body>
-</html>
-
-
-
-
-
