@@ -179,7 +179,27 @@ body {
 <main class="container" id="galleryPage" style="display:none;">
   <h2 class="title">สถานที่ท่องเที่ยวแนะนำ</h2>
   <div class="photo-list" id="photoList">
-    <!-- รูปและ caption รวม 21 รูป เหมือนโค้ดของคุณ -->
+    <div class="item"><div class="wrap"><img data-index="1" src="image/china.png" alt="ปักกิ่ง"></div><div class="caption">ปักกิ่ง (Beijing)</div></div>
+    <div class="item"><div class="wrap"><img data-index="2" src="image/china2.png" alt="กำแพงเมืองจีน"></div><div class="caption">กำแพงเมืองจีน (Great Wall of China)</div></div>
+    <div class="item"><div class="wrap"><img data-index="3" src="image/china3.png" alt="เซียงไฮ้"></div><div class="caption">เซียงไฮ้ (Shanghai)</div></div>
+    <div class="item"><div class="wrap"><img data-index="4" src="image/china4.png" alt="หาดไว่ทาน"></div><div class="caption">หาดไว่ทาน (The Bund)</div></div>
+    <div class="item"><div class="wrap"><img data-index="5" src="image/china5.png" alt="พิพิธภัณฑ์เซี่ยงไฮ้"></div><div class="caption">พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)</div></div>
+    <div class="item"><div class="wrap"><img data-index="6" src="image/china6.png" alt="จิ่วจ้ายโกว"></div><div class="caption">หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)</div></div>
+    <div class="item"><div class="wrap"><img data-index="7" src="image/china21.png" alt="ฮาร์บิน"></div><div class="caption">ฮาร์บิน (Harbin)</div></div>
+    <div class="item"><div class="wrap"><img data-index="8" src="image/chinawe.png" alt="สุสานจิ๋นซีฮ่องเต้"></div><div class="caption">สุสานจิ๋นซีฮ่องเต้</div></div>
+    <div class="item"><div class="wrap"><img data-index="9" src="image/chinaad.png" alt="จางเจียเจี้ย"></div><div class="caption">อุทยานแห่งชาติจางเจียเจี้ย</div></div>
+    <div class="item"><div class="wrap"><img data-index="10" src="image/chinaded.png" alt="พระราชวังโปตาลา"></div><div class="caption">พระราชวังโปตาลา (Potala Palace)</div></div>
+    <div class="item"><div class="wrap"><img data-index="11" src="image/chinade.png" alt="ศูนย์อนุรักษ์หมีแพนด้า"></div><div class="caption">ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Panda Base)</div></div>
+    <div class="item"><div class="wrap"><img data-index="12" src="image/chibadasdw.png" alt="ทะเลสาบพระจันทร์เสี้ยว"></div><div class="caption">ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)</div></div>
+    <div class="item"><div class="wrap"><img data-index="13" src="image/chinadaed.png" alt="ต๋ากู่ปิงชวน"></div><div class="caption">ต๋ากู่ปิงชวน (Dagu Glacier)</div></div>
+    <div class="item"><div class="wrap"><img data-index="14" src="image/chinadaeda.png" alt="ตันเสียจางเย่"></div><div class="caption">อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia)</div></div>
+    <div class="item"><div class="wrap"><img data-index="15" src="image/chinasdawd.png" alt="กุ้ยหลิน"></div><div class="caption">กุ้ยหลิน (Guilin)</div></div>
+    <div class="item"><div class="wrap"><img data-index="16" src="image/chinadawd.png" alt="ย่าติง"></div><div class="caption">อุทยานย่าติง (Yading Nature Reserve)</div></div>
+    <div class="item"><div class="wrap"><img data-index="17" src="image/chinadwde.png" alt="เฟิ่งหวง"></div><div class="caption">เมืองโบราณเฟิ่งหวง (Fenghuang)</div></div>
+    <div class="item"><div class="wrap"><img data-index="18" src="image/chinaadwed.png" alt="ช่องแคบแยงซีเกียง"></div><div class="caption">ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง</div></div>
+    <div class="item"><div class="wrap"><img data-index="19" src="image/chinaadwde.png" alt="ทะเลสาบชิงไห่"></div><div class="caption">ทะเลสาบชิงไห่ (Qinghai Lake)</div></div>
+    <div class="item"><div class="wrap"><img data-index="20" src="image/chinawdawd.png" alt="ทะเลสาบซีหู"></div><div class="caption">ทะเลสาบซีหู (Xi Hu / West Lake)</div></div>
+    <div class="item"><div class="wrap"><img data-index="21" src="image/chinadeded.png" alt="อุทยานป่าหิน"></div><div class="caption">อุทยานป่าหิน (Shilin Stone Forest)</div></div>
   </div>
 </main>
 
@@ -193,28 +213,120 @@ body {
 
 <script>
 const places = [
-  "รายละเอียดปักกิ่ง",
-  "รายละเอียดกำแพงเมืองจีน",
-  "รายละเอียดเซียงไฮ้",
-  "รายละเอียดหาดไว่ทาน",
-  "รายละเอียดพิพิธภัณฑ์เซี่ยงไฮ้",
-  "รายละเอียดจิ่วจ้ายโกว",
-  "รายละเอียดฮาร์บิน",
-  "รายละเอียดสุสานจิ๋นซีฮ่องเต้",
-  "รายละเอียดจางเจียเจี้ย",
-  "รายละเอียดพระราชวังโปตาลา",
-  "รายละเอียดศูนย์อนุรักษ์หมีแพนด้า",
-  "รายละเอียดทะเลสาบพระจันทร์เสี้ยว",
-  "รายละเอียดต๋ากู่ปิงชวน",
-  "รายละเอียดตันเสียจางเย่",
-  "รายละเอียดกุ้ยหลิน",
-  "รายละเอียดย่าติง",
-  "รายละเอียดเฟิ่งหวง",
-  "รายละเอียดช่องแคบแยงซีเกียง",
-  "รายละเอียดทะเลสาบชิงไห่",
-  "รายละเอียดทะเลสาบซีหู",
-  "รายละเอียดอุทยานป่าหิน"
+`ปักกิ่ง (Beijing)
+ปักกิ่ง เมืองหลวงแห่งประเทศจีนที่ทุกคนควรลองมาเที่ยวดูสักครั้ง ภายในเมืองนั้นมีสถานที่ท่องเที่ยวมากมาย ไม่ว่าจะเป็นการเที่ยวเชิงอนุรักษ์ เยี่ยมชมสถาปัตยกรรมโบราณ หรือเดินช็อปปิงทานอาหารจีนเลิศรส โดยสถานที่ท่องเที่ยวแนะนำในปักกิ่งนั้นมีด้วยกันดังนี้
+
+- กำแพงเมืองจีน (Great Wall of China) กำแพงที่ยาวที่สุดในโลก 1 ใน 7 สิ่งมหัศจรรย์ของโลกที่ควรมาเยือนสักครั้ง
+- จัตุรัสเทียนอันเหมิน (Tiananmen Square) ลานจัตุรัสที่ใหญ่ที่สุดในโลก จุคนได้กว่า 1 ล้านคนเลยทีเดียว
+- พระราชวังต้องห้าม (The Forbidden City) เที่ยวชมตำหนักแบบจีนในพระราชวังที่ใหญ่ที่สุดในโลก
+- พิพิธภัณฑ์ศิลปะอิฐแดง (Red-Brick Art Museum) Art Museum ที่จัดแสดงงานศิลปะแบบ Modern เหมาะแก่การถ่ายรูป
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Beijing`,
+
+`กำแพงเมืองจีน (Great Wall of China)
+ไม่ว่าใครต่างก็เคยได้ยินสมญานามของ 1 ใน 7 สิ่งมหัศจรรย์ของโลกอย่างกำแพงเมืองจีน ด้วยความยาวถึง 21,196 กิโลเมตร ครอบคลุมถึง 9 มณฑลในประเทศจีน ซึ่งวิวทิวทัศน์และบรรยากาศด้านบนกำแพงนั้นเรียกได้ว่างดงามเป็นลำดับต้นๆของโลกเลยทีเดียว หากใครไปเที่ยวจีนแล้วไม่ได้มาที่นี่ เรียกได้ว่าเหมือนยังมาไม่ถึงเมืองจีนเลยทีเดียว
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Great+Wall+of+China`,
+
+`เซียงไฮ้ (Shanghai)
+เซียงไฮ้ หนึ่งในเมืองที่มีชื่อเสียงเป็นอันดับต้นๆ ของประเทศจีน เป็นย่านเศรษฐกิจที่ถูกขนานนามว่าเป็น นครปารีสแห่งตะวันออก ซึ่งภายในเมืองนั้นก็มีทั้งห้างสรรพสินค้าให้คุณได้เดินช็อปปิง ภัตตาคารดัง แต่ยังคงมีสถาปัตยกรรมดั้งเดิมไว้ให้ได้เยี่ยมชมอีกมากมาย โดยสถานที่ท่องเที่ยวที่เราแนะนำในเซียงไฮ้ เช่น
+
+- ถนนนานกิง (Nanjing Road)
+- พิพิธภัณฑ์ประวัติศาสตร์ธรรมชาติเซียงไฮ้ (Shanghai Natural History Museum)
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Shanghai`,
+
+`หาดไว่ทาน (The Bund)
+หาดไว่ทาน หรือ The Bund ย่านถนนริมแม่น้ำที่เต็มไปด้วยตึกสไตล์ยุโรปดั้งเดิม เป็นหนึ่งในแลนด์มาร์กสำคัญของเซียงไฮ้
+
+ลิงก์แผนที่: https://www.google.com/maps/search/The+Bund+Shanghai`,
+
+`พิพิธภัณฑ์เซี่ยงไฮ้ (Shanghai Museum)
+พิพิธภัณฑ์ด้านศิลปะและวัฒนธรรม
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Shanghai+Museum`,
+
+`หุบเขาจิ่วจ้ายโกว (Jiuzhaigou)
+อุทยานที่เต็มไปด้วยต้นไม้ ทะเลสาบ น้ำตกสวยงาม
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Jiuzhaigou`,
+
+`ฮาร์บิน (Harbin)
+เมืองหนาวของจีน เทศกาลน้ำแข็ง หมู่บ้านสไตล์รัสเซีย
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Harbin`,
+
+`สุสานจิ๋นซีฮ่องเต้ (Mausoleum of the First Qin Emperor)
+โบราณสถานกองทหารดินเผา
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Terracotta+Army`,
+
+`อุทยานแห่งชาติจางเจียเจี้ย (Zhangjiajie National Forest Park)
+ยอดเขาหินเสาสูงชัน มรดกโลก
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Zhangjiajie+National+Forest+Park`,
+
+`พระราชวังโปตาลา (Potala Palace)
+สถาปัตยกรรมสำคัญแห่งทิเบต
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Potala+Palace`,
+
+`ศูนย์อนุรักษ์หมีแพนด้า (Chengdu Panda Base)
+ดูแพนด้าแบบใกล้ชิด
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Chengdu+Panda+Base`,
+
+`ทะเลสาบพระจันทร์เสี้ยว (Crescent Lake)
+โอเอซิสกลางทะเลทรายโกบี
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Crescent+Lake+China`,
+
+`ต๋ากู่ปิงชวน (Dagu Glacier)
+อุทยานภูผาหิมะ
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Dagu+Glacier+National+Park`,
+
+`อุทยานธรณีวิทยาตันเสียจางเย่ (Danxia Landform)
+ภูเขาหินสีรุ้ง
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Zhangye+Danxia+Landform`,
+
+`กุ้ยหลิน (Guilin)
+ภูเขาหินปูนและทะเลสาบงดงาม
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Guilin`,
+
+`อุทยานย่าติง (Yading Nature Reserve)
+ทะเลสาบ ภูเขาหิมะ วิวงดงามมาก
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Yading+Nature+Reserve`,
+
+`เมืองโบราณเฟิ่งหวง (Fenghuang)
+เมืองโบราณริมแม่น้ำสุดโรแมนติก
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Fenghuang+Ancient+Town`,
+
+`ช่องแคบซานเสียแห่งลุ่มแม่น้ำแยงซีเกียง (Three Gorges)
+ล่องเรือชมวิวหุบเขา
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Three+Gorges+Yangtze`,
+
+`ทะเลสาบชิงไห่ (Qinghai Lake)
+ทะเลสาบน้ำเค็มใหญ่ที่สุดในจีน
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Qinghai+Lake`,
+
+`ทะเลสาบซีหู (West Lake / Xi Hu)
+ทะเลสาบสำคัญเมืองหางโจว
+
+ลิงก์แผนที่: https://www.google.com/maps/search/West+Lake+Hangzhou`,
+
+`อุทยานป่าหิน (Shilin Stone Forest)
+ลานหินปูนโบราณเมืองคุนหมิง
+
+ลิงก์แผนที่: https://www.google.com/maps/search/Shilin+Stone+Forest`
 ];
+
 
 function enterGallery(){
   document.getElementById('home').style.display='none';
@@ -263,3 +375,5 @@ function startRevealObserver(){
 </script>
 </body>
 </html>
+
+
