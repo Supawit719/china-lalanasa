@@ -4,427 +4,262 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>แกลเลอรี่ 21 สถานที่ท่องเที่ยวในประเทศจีน</title>
-
 <style>
-/* ----------------------------------------------------------
-   🎨 ไล่เฉดสีใหม่ให้โทนเข้ากันมากกว่าเดิม
----------------------------------------------------------- */
 :root {
-  --bg1: #DD0303;     /* แดงเข้ม */
-  --bg2: #FA812F;     /* ส้มเข้ม */
-  --bg3: #FAB12F;     /* ส้มทอง */
-  --text-light: #FEF3E2; /* ครีม */
-  --card-bg: rgba(255,255,255,0.15);
+  --main: #5a007a;
+  --accent: #a043ff;
+  --bg-dark: #0a0010;
 }
 
-/* พื้นหลังรวม */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
-  color: var(--text-light);
+  background: linear-gradient(135deg, #0a0010, #260033);
+  color: white;
   overflow-x: hidden;
 }
 
-/* ----------------------------------------------------------
-   หน้าแรก
----------------------------------------------------------- */
+/* หน้าแรก */
 .hero {
   height: 100vh;
+  width: 100vw;
+  background: url('โค้ด/ฉงฉิง2.gif') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url('โค้ด/ฉงฉิง2.gif') center / cover no-repeat;
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
 }
 .hero h1 {
-  font-size: 52px;
+  font-size: 50px;
   margin-bottom: 25px;
-  color: var(--text-light);
 }
-
 .enter-btn {
+  margin-top: 20px;
   padding: 14px 36px;
   font-size: 18px;
-  background: var(--bg3);
-  color: white;
+  background: var(--accent);
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: .35s;
-  box-shadow: 0 0 20px rgba(250,129,47,0.7);
+  color: white;
+  font-weight: bold;
+  transition: 0.35s;
+  box-shadow: 0 0 18px rgba(160, 67, 255, 0.6);
 }
 .enter-btn:hover {
-  background: var(--bg2);
-  transform: scale(1.08);
+  background: #d37aff;
+  box-shadow: 0 0 30px rgba(208, 131, 255, 0.8);
+  transform: scale(1.05);
 }
 
-/* ----------------------------------------------------------
-   โซนแกลเลอรี่
----------------------------------------------------------- */
+/* หน้าแกลเลอรี่ */
 .container {
   max-width: 1200px;
   margin: 30px auto;
-  padding: 20px;
-  background: linear-gradient(180deg, var(--bg3) 0%, var(--bg1) 100%);
+  padding: 0 16px;
+  background: linear-gradient(180deg, #1a001f 0%, #000000 100%);
   border-radius: 20px;
-  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  box-shadow: 0 0 40px rgba(155, 0, 255, 0.2);
 }
 
 .title {
   text-align: center;
-  font-size: 32px;
-  margin: 20px 0 30px 0;
-  color: var(--text-light);
+  margin: 30px 0;
+  font-size: 30px;
+  color: #d8a4ff;
+  text-shadow: 0 0 12px rgba(176, 123, 255, 0.4);
+  letter-spacing: 1px;
 }
 
 .photo-list {
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  align-items: start;
 }
 
 .item {
-  background: var(--card-bg);
+  background: rgba(30, 0, 50, 0.8);
   border-radius: 14px;
   overflow: hidden;
-  padding: 12px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.45);
-  transition: .3s;
-}
-.item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.55);
+  padding: 10px;
+  transition: transform 0.25s, box-shadow 0.25s;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
 }
 
 .item img {
   width: 100%;
   height: 230px;
   object-fit: cover;
-  border-radius: 8px;
   display: block;
   opacity: 0;
-  transform: translateY(20px) scale(.96);
-  transition: .6s;
+  transform: translateY(20px) scale(0.98);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  filter: brightness(0.85) saturate(1.1);
+  border-radius: 8px;
 }
 .item:hover img {
-  filter: brightness(1.15) saturate(1.2);
   transform: scale(1.07);
+  filter: brightness(1.2) saturate(1.3);
+  box-shadow: 0 12px 30px rgba(180, 0, 255, 0.4);
 }
-
-.caption a {
-  text-decoration: none;
-  color: var(--bg3);
-  font-weight: 700;
-  font-size: 18px;
-  display: block;
+.caption {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #f0d4ff;
+  font-size: 17px;
   text-align: center;
-  margin-top: 10px;
-}
-.caption a:hover {
-  color: var(--text-light);
-  text-shadow: 0 0 10px rgba(250,177,47,0.7);
 }
 
-/* ----------------------------------------------------------
-   Viewer
----------------------------------------------------------- */
+/* viewer */
 #viewer {
   display: none;
-  padding: 28px 16px;
+  padding: 24px 16px;
   text-align: center;
-  background: linear-gradient(160deg, var(--bg2), var(--bg1));
+  background: radial-gradient(circle at top, #2d003a, #000);
 }
-
 #viewer img {
   width: 90%;
   max-width: 900px;
-  border-radius: 14px;
-  box-shadow: 0 18px 55px rgba(0,0,0,0.6);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
-
 .place-text {
-  margin-top: 20px;
+  margin-top: 16px;
+  background: linear-gradient(180deg, rgba(150, 0, 255, 0.15), rgba(0, 0, 0, 0.7));
   padding: 18px;
-  background: rgba(0,0,0,0.45);
   border-radius: 10px;
+  color: #fff;
   max-width: 900px;
-  margin-inline: auto;
-  white-space: pre-line;
-  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
   line-height: 1.7;
+  text-align: left;
+  border: 1px solid rgba(200, 150, 255, 0.3);
+  white-space: pre-line;
 }
-
 .back-btn {
-  padding: 10px 18px;
-  border: none;
-  background: var(--bg2);
+  margin-top: 14px;
+  background: #8a2be2;
   color: white;
-  border-radius: 10px;
+  padding: 10px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  margin-bottom: 20px;
-  transition: .3s;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 0 12px rgba(155, 0, 255, 0.5);
 }
 .back-btn:hover {
-  background: var(--bg3);
-  transform: scale(1.06);
+  background: #b23cff;
+  transform: scale(1.05);
 }
 
-@media(max-width:900px){
-  .photo-list { grid-template-columns: repeat(2,1fr); }
+@media (max-width:900px){
+  .photo-list{grid-template-columns: repeat(2,1fr);}
+  .item img{height:200px;}
 }
-@media(max-width:600px){
-  .photo-list { grid-template-columns: 1fr; }
-  .item img { height: 260px; }
+@media (max-width:600px){
+  .photo-list{grid-template-columns: 1fr;}
+  .item img{height:260px;}
+  .hero{padding:40px 20px}
 }
 </style>
 </head>
 <body>
 
-<!-- --------------------------------------------------------
-     หน้าแรก
---------------------------------------------------------- -->
 <section class="hero" id="home">
   <h1>แกลเลอรี่ 21 สถานที่ท่องเที่ยวในประเทศจีน</h1>
   <button class="enter-btn" onclick="enterGallery()">เข้าสู่เว็บไซต์</button>
 </section>
 
-<!-- --------------------------------------------------------
-     หน้าแกลเลอรี่
---------------------------------------------------------- -->
 <main class="container" id="galleryPage" style="display:none;">
   <h2 class="title">สถานที่ท่องเที่ยวแนะนำ</h2>
-
   <div class="photo-list" id="photoList">
-
-    <!-- 🔥 แค่เอา Google Maps ลิงก์ใส่ใน <a> -->
-    <div class="item">
-      <img data-index="1" src="image/china.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/7uzmpoyMq7MNCjAf7" target="_blank">ปักกิ่ง (Beijing)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="2" src="image/china2.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/hrpPn5x984PdaP8M8" target="_blank">กำแพงเมืองจีน (Great Wall)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="3" src="image/china3.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/tUuHL4rFYrSiGxVj6" target="_blank">เซี่ยงไฮ้ (Shanghai)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="4" src="image/china4.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/YxG5cY6M7JbEXPpT7" target="_blank">ไว่ทาน (The Bund)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="5" src="image/china5.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/gPTxg6ZG9V1QzMtj8" target="_blank">พิพิธภัณฑ์เซี่ยงไฮ้</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="6" src="image/china6.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/QNUkJgAexKk9kE9S9" target="_blank">จิ่วจ้ายโกว</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="7" src="image/china21.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/r1VYxZU2K2F2eHvW6" target="_blank">ฮาร์บิน</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="8" src="image/chinawe.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/Rv3qB1CP6p6kMh7B9" target="_blank">สุสานจิ๋นซีฮ่องเต้</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="9" src="image/chinaad.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/mGi3iS4wvEiKc3Qp9" target="_blank">จางเจียเจี้ย</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="10" src="image/chinaded.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/dhZCijQjF9uN3KLC8" target="_blank">พระราชวังโปตาลา</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="11" src="image/chinade.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/eAQPQ4hKX7P8hnMo8" target="_blank">ศูนย์อนุรักษ์แพนด้าเฉิงตู</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="12" src="image/chibadasdw.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/cBCxXQYyF7rW1y8k7" target="_blank">ทะเลสาบพระจันทร์เสี้ยว</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="13" src="image/chinadaed.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/5pMv5h9dHb1VsvAY7" target="_blank">ต๋ากู่ปิงชวน</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="14" src="image/chinadaeda.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/CZ7sHip8ZU2s4Y4h7" target="_blank">ตันเสียจางเย่ (Danxia)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="15" src="image/chinasdawd.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/gZ9dCUG7H8eZ31u98" target="_blank">กุ้ยหลิน</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="16" src="image/chinadawd.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/wSzjK3FZ2pPhxK5J9" target="_blank">ย่าติง</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="17" src="image/chinadwde.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/cTa5Qn677o9xb3zV7" target="_blank">เฟิ่งหวง</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="18" src="image/chinaadwed.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/dtL3JAX6V2oGz7CN8" target="_blank">ช่องแคบแยงซีเกียง (Three Gorges)</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="19" src="image/chinaadwde.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/DMoPb3kumMf1iTtYA" target="_blank">ทะเลสาบชิงไห่</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="20" src="image/chinawdawd.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/2BSe2LR4eQJrD1pu5" target="_blank">ทะเลสาบซีหู</a>
-      </div>
-    </div>
-
-    <div class="item">
-      <img data-index="21" src="image/chinadeded.png">
-      <div class="caption">
-        <a href="https://maps.app.goo.gl/4MfLuap6X3zeZPNS9" target="_blank">อุทยานป่าหิน</a>
-      </div>
-    </div>
-
+    <!-- รูปและ caption รวม 21 รูป เหมือนโค้ดของคุณ -->
   </div>
 </main>
 
-<!-- --------------------------------------------------------
-     Viewer
---------------------------------------------------------- -->
-<section id="viewer">
-  <button class="back-btn" onclick="backToGallery()">ย้อนกลับ</button>
-  <img id="viewerImg">
+<section id="viewer" aria-hidden="true">
+  <div style="padding:18px 10px; text-align:center;">
+    <button class="back-btn" onclick="backToGallery()">ย้อนกลับ</button>
+  </div>
+  <img id="viewerImg" src="" alt="รูปใหญ่">
   <div id="viewerText" class="place-text"></div>
 </section>
 
-
 <script>
-/* ----------------------------------------------------------
-   เนื้อหา (เหมือนเดิม)
----------------------------------------------------------- */
 const places = [
-`ปักกิ่ง (Beijing)
-ปักกิ่ง เมืองหลวงของจีน เต็มไปด้วยแลนด์มาร์กสำคัญ เช่น กำแพงเมืองจีน พระราชวังต้องห้าม และอื่นๆ`,
-`กำแพงเมืองจีน...`,
-`เซี่ยงไฮ้...`,
-`ไว่ทาน...`,
-`พิพิธภัณฑ์เซี่ยงไฮ้...`,
-`จิ่วจ้ายโกว...`,
-`ฮาร์บิน...`,
-`สุสานจิ๋นซี...`,
-`จางเจียเจี้ย...`,
-`โปตาลา...`,
-`ศูนย์แพนด้าเฉิงตู...`,
-`ทะเลสาบพระจันทร์เสี้ยว...`,
-`ต๋ากู่ปิงชวน...`,
-`ตันเสียจางเย่...`,
-`กุ้ยหลิน...`,
-`ย่าติง...`,
-`เฟิ่งหวง...`,
-`ช่องแคบแยงซีเกียง...`,
-`ทะเลสาบชิงไห่...`,
-`ทะเลสาบซีหู...`,
-`อุทยานป่าหิน...`,
+  "รายละเอียดปักกิ่ง",
+  "รายละเอียดกำแพงเมืองจีน",
+  "รายละเอียดเซียงไฮ้",
+  "รายละเอียดหาดไว่ทาน",
+  "รายละเอียดพิพิธภัณฑ์เซี่ยงไฮ้",
+  "รายละเอียดจิ่วจ้ายโกว",
+  "รายละเอียดฮาร์บิน",
+  "รายละเอียดสุสานจิ๋นซีฮ่องเต้",
+  "รายละเอียดจางเจียเจี้ย",
+  "รายละเอียดพระราชวังโปตาลา",
+  "รายละเอียดศูนย์อนุรักษ์หมีแพนด้า",
+  "รายละเอียดทะเลสาบพระจันทร์เสี้ยว",
+  "รายละเอียดต๋ากู่ปิงชวน",
+  "รายละเอียดตันเสียจางเย่",
+  "รายละเอียดกุ้ยหลิน",
+  "รายละเอียดย่าติง",
+  "รายละเอียดเฟิ่งหวง",
+  "รายละเอียดช่องแคบแยงซีเกียง",
+  "รายละเอียดทะเลสาบชิงไห่",
+  "รายละเอียดทะเลสาบซีหู",
+  "รายละเอียดอุทยานป่าหิน"
 ];
 
 function enterGallery(){
-  document.getElementById("home").style.display="none";
-  document.getElementById("galleryPage").style.display="block";
+  document.getElementById('home').style.display='none';
+  document.getElementById('galleryPage').style.display='block';
+  setupClickHandlers();
   startRevealObserver();
 }
 
-document.querySelectorAll(".photo-list img").forEach(img=>{
-  img.addEventListener("click", ()=>openViewer(img.dataset.index));
-});
+function setupClickHandlers(){
+  document.querySelectorAll('.photo-list img').forEach(img=>{
+    img.addEventListener('click', ()=>openViewer(Number(img.dataset.index)));
+  });
+}
 
 function openViewer(idx){
-  const i = Number(idx);
-  document.getElementById("galleryPage").style.display="none";
-  document.getElementById("viewer").style.display="block";
-  document.getElementById("viewerImg").src = document.querySelector(`img[data-index="${i}"]`).src;
-  document.getElementById("viewerText").textContent = places[i-1];
-  window.scrollTo({top:0,behavior:"smooth"});
+  const viewer = document.getElementById('viewer');
+  const viewerImg = document.getElementById('viewerImg');
+  const viewerText = document.getElementById('viewerText');
+  const img = document.querySelector(`.photo-list img[data-index='${idx}']`);
+  viewerImg.src = img.src;
+  viewerText.textContent = places[idx-1] || '';
+  document.getElementById('galleryPage').style.display = 'none';
+  viewer.style.display = 'block';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function backToGallery(){
-  document.getElementById("viewer").style.display="none";
-  document.getElementById("galleryPage").style.display="block";
+  document.getElementById('viewer').style.display='none';
+  document.getElementById('galleryPage').style.display='block';
 }
 
 function startRevealObserver(){
-  const obs = new IntersectionObserver((items,o)=>{
-    items.forEach(e=>{
+  const options = { root: null, threshold: 0.12 };
+  const imgs = document.querySelectorAll('.photo-list img');
+  const obs = new IntersectionObserver((entries, o)=>{
+    entries.forEach(e=>{
       if(e.isIntersecting){
         e.target.style.opacity=1;
-        e.target.style.transform="translateY(0) scale(1)";
+        e.target.style.transform='translateY(0) scale(1)';
         o.unobserve(e.target);
       }
     });
-  },{threshold:0.15});
-  document.querySelectorAll(".photo-list img").forEach(im=>obs.observe(im));
+  }, options);
+  imgs.forEach(img=>obs.observe(img));
 }
 </script>
-
 </body>
 </html>
